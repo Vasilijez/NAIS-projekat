@@ -39,6 +39,20 @@ services:
 #     ports:
 #       - "9030:9030"
 
+# Vasilije: Trebace?
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: admin@example.com
+#      PGADMIN_DEFAULT_PASSWORD: admin
+#    ports:
+#      - "8080:80"
+#    depends_on:
+#      - postgresdb
+#    volumes:
+#      - ./data:/data
+#      - ./csv:/var/lib/pgadmin/import
+
   columnar-key-value-service:
      build:
        context: ./ColumnarDatabaseService
@@ -88,7 +102,9 @@ services:
       SPRING_NEO4J_URI: "bolt://neo4j:7687"
       SPRING_NEO4J_USERNAME: neo4j
       SPRING_NEO4J_PASSWORD: password
-     
+#    Vasilije: trebace?
+#    volumes:
+#      - ./data:/data
 
   neo4j:
     image: neo4j
@@ -100,9 +116,10 @@ services:
       NEO4J_AUTH: neo4j/password
     volumes:
       - ./data:/data
+#      Vasilije: trebace?
+#      - ./import:/var/lib/neo4j/import
 
 
 volumes:
   data:
-  influxdb-storage:
   grafana_storage: { }
