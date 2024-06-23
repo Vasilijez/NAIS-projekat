@@ -1,11 +1,17 @@
 package rs.ac.uns.acs.nais.GraphDatabaseService.model;
 
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.neo4j.core.schema.Relationship;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Node
 public class Player {
     @Id
+    @GeneratedValue
     private Long idOriginal;
 
     private String name;
@@ -18,6 +24,8 @@ public class Player {
 
 //    private Team team;
 
+    @Relationship(value = "PLAYED", direction = Relationship.Direction.OUTGOING)
+    private List<Plays> played = new ArrayList<>();//TODO geteri itd
 
     public Player(Long idOriginal, String name, String lastName, String position, int age) {
         this.idOriginal = idOriginal;

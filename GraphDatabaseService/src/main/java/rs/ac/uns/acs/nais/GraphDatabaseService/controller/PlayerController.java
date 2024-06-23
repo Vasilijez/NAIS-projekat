@@ -23,7 +23,7 @@ public class PlayerController {
 
     @PostMapping
     public ResponseEntity<Player> createPlayer(@RequestBody Player player){
-        return new ResponseEntity<>(playerService.createPlayer(player), HttpStatus.OK);
+        return new ResponseEntity<>(playerService.createPlayer(player), HttpStatus.CREATED);
     }
 
     @DeleteMapping
