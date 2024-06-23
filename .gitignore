@@ -4,3 +4,5 @@
 
 .idea/*
 /.idea/
+data/transactions/system/neostore.transaction.db.0
+data/transactions/neo4j/neostore.transaction.db.0
