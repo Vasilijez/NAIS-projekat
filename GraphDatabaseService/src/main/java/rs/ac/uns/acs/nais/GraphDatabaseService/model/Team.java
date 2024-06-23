@@ -3,23 +3,25 @@ package rs.ac.uns.acs.nais.GraphDatabaseService.model;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Relationship;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Node
-public class Match {
+public class Team {
     @Id
     @GeneratedValue
     private Long idOriginal;
 
     private String name;
 
-    private Date date;
+    @Relationship(value = "PARTICIPATED", direction = Relationship.Direction.OUTGOING)
+    private List<Participates> participated = new ArrayList<>();
 
-    public Match(Long idOriginal, String name, Date date) {
+    public Team(Long idOriginal, String name) {
         this.idOriginal = idOriginal;
         this.name = name;
-        this.date = date;
     }
 
     public Long getIdOriginal() {
@@ -38,12 +40,11 @@ public class Match {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public List<Participates> getParticipated() {
+        return participated;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setParticipated(List<Participates> participated) {
+        this.participated = participated;
     }
-
 }

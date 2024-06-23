@@ -22,17 +22,19 @@ public class Player {
 
     private int age;
 
-//    private Team team;
-
     @Relationship(value = "PLAYED", direction = Relationship.Direction.OUTGOING)
-    private List<Plays> played = new ArrayList<>();//TODO geteri itd
+    private List<Plays> played = new ArrayList<>();
 
-    public Player(Long idOriginal, String name, String lastName, String position, int age) {
+    @Relationship(value = "IS_IN", direction = Relationship.Direction.OUTGOING)
+    private IsIn isIn;
+
+    public Player(Long idOriginal, String name, String lastName, String position, int age, IsIn isIn) {
         this.idOriginal = idOriginal;
         this.name = name;
         this.lastName = lastName;
         this.position = position;
         this.age = age;
+        this.isIn = isIn;
     }
 
     public Long getIdOriginal() {
@@ -73,5 +75,21 @@ public class Player {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public List<Plays> getPlayed() {
+        return played;
+    }
+
+    public void setPlayed(List<Plays> played) {
+        this.played = played;
+    }
+
+    public IsIn getIsIn() {
+        return isIn;
+    }
+
+    public void setIsIn(IsIn isIn) {
+        this.isIn = isIn;
     }
 }
