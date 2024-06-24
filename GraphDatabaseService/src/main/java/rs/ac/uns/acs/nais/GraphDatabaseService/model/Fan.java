@@ -3,6 +3,10 @@ package rs.ac.uns.acs.nais.GraphDatabaseService.model;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Relationship;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Node
 public class Fan {
@@ -12,9 +16,14 @@ public class Fan {
 
     private String name;
 
-    //TODO koji mec je gledao
-    //TODO koji tim voli? za koji navija?
-    //TODO koji igrac mu je omiljeni
+    @Relationship(value = "WATCHED", direction = Relationship.Direction.OUTGOING)
+    private List<Watches> watched = new ArrayList<>();
+
+    @Relationship(value = "CHEERS", direction = Relationship.Direction.OUTGOING)
+    private List<Cheers> cheered = new ArrayList<>();
+
+    @Relationship(value = "LIKES", direction = Relationship.Direction.OUTGOING)
+    private List<Likes> liked = new ArrayList<>();
 
 
     public Fan(Long idOriginal, String name) {
@@ -36,5 +45,29 @@ public class Fan {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Watches> getWatched() {
+        return watched;
+    }
+
+    public void setWatched(List<Watches> watched) {
+        this.watched = watched;
+    }
+
+    public List<Cheers> getCheered() {
+        return cheered;
+    }
+
+    public void setCheered(List<Cheers> cheered) {
+        this.cheered = cheered;
+    }
+
+    public List<Likes> getLiked() {
+        return liked;
+    }
+
+    public void setLiked(List<Likes> liked) {
+        this.liked = liked;
     }
 }
