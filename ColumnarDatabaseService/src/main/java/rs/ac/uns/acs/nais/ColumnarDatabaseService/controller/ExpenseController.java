@@ -3,9 +3,8 @@ package rs.ac.uns.acs.nais.ColumnarDatabaseService.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpenseDTO;
-import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpensesDTO;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpensesCategorized;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.Expense;
-import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.Income;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.service.ExpenseService;
 
 import java.util.List;
@@ -41,5 +40,10 @@ public class ExpenseController {
     @PostMapping("/add-list")
     public void createExpenses(@RequestBody List<ExpenseDTO> DTOs){
          expenseService.createExpenses(DTOs);
+    }
+
+    @GetMapping("/per-category")
+    public List<ExpensesCategorized> perCategory(){
+        return expenseService.perCategory();
     }
 }
