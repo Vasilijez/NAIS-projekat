@@ -1,16 +1,15 @@
 package rs.ac.uns.acs.nais.ColumnarDatabaseService.service;
 
+import com.datastax.oss.driver.api.core.cql.Row;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Service;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.TicketSaleDTO;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.TicketSalesPerTypeDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.TicketSale;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.repository.TicketSaleRepository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @EnableCaching
@@ -68,5 +67,27 @@ public class TicketSaleService {
             newSales.add(ticketSale);
         }
         ticketSaleRepository.saveAll(newSales);
+    }
+
+    public List<TicketSalesPerTypeDTO> getTicketSalesPerType(UUID matchId) {
+
+        List<Object[]> results = ticketSaleRepository.getTicketSalesPerType(matchId);
+        List<TicketSalesPerTypeDTO> dtos = new ArrayList<>();
+
+        for (Object obj :results) {
+            Object[] result = (Object[]) obj;
+
+            Row row = (Row) result[0];
+            System.out.println("ticket_type bi je: " + row.getString("ticket_type"));
+            String ticketType = row.getString("ticket_type");
+            Integer count = row.getInt("count");
+
+            TicketSalesPerTypeDTO dto = new TicketSalesPerTypeDTO();
+            dto.ticketType=(row.getString("ticket_type"));
+            dto.setCount(count);
+
+            dtos.add(dto);
+        }
+        return dtos;
     }
 }

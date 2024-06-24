@@ -2,7 +2,9 @@ package rs.ac.uns.acs.nais.ColumnarDatabaseService.repository;
 
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.data.cassandra.repository.Query;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpenseDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpensesCategorized;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.Expense;
 
@@ -26,4 +28,9 @@ public interface ExpenseRepository extends CassandraRepository<Expense, UUID> {
         "ALLOW FILTERING")
     List<Object[]> findAverageAmountByCategory(LocalDateTime startDate, LocalDateTime endDate);
 
+
+@Query("SELECT * " +
+        "FROM expenses " +
+        "WHERE category = :category")
+    List<Expense> getAllByCategory(String category);
 }

@@ -4,11 +4,15 @@ package rs.ac.uns.acs.nais.ColumnarDatabaseService.service;
 import com.datastax.oss.driver.api.core.cql.Row;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpenseDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpensesCategorized;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.Expense;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.enumeration.ExpenseCategory;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.mapper.ExpenseMapper;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.mapper.IncomeMapper;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.repository.ExpenseRepository;
 
 import java.time.LocalDateTime;
@@ -16,6 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
+
+import static rs.ac.uns.acs.nais.ColumnarDatabaseService.mapper.ExpenseMapper.mapper;
+
 
 @Service
 @EnableCaching
@@ -104,5 +112,13 @@ public class ExpenseService {
         }
 
         return dtos;
+    }
+
+    public List<ExpenseDTO> getAllByCategory(String category) {
+
+        return expenseRepository.getAllByCategory(category.toUpperCase()).
+                stream()
+                .map(ExpenseMapper.mapper::expenseToExpenseDTO)
+                .collect(Collectors.toList());
     }
 }

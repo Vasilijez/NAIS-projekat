@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpenseDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.IncomeDTO;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.MonthlyIncomeDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.Income;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.service.IncomeService;
 
@@ -42,5 +43,15 @@ public class IncomeController {
     @PostMapping("/add-list")
     public void createIncomes(@RequestBody List<IncomeDTO> DTOs){
         incomeService.createIncomes(DTOs);
+    }
+
+    @GetMapping("/monthly/{year}")
+    public List<MonthlyIncomeDTO> getMonthlyIncome(@PathVariable Integer year) {
+        return incomeService.getMonthlyIncomeBy(year);
+    }
+
+    @GetMapping("/all/{year}/{month}")
+    public List<IncomeDTO> getIncomesForYearAndMonth(@PathVariable Integer year, @PathVariable Integer month){
+        return incomeService.getIncomesForYearAndMonth(year, month);
     }
 }

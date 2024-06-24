@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpenseDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.TicketSaleDTO;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.TicketSalesPerTypeDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.TicketSale;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.service.TicketSaleService;
 
@@ -45,5 +46,10 @@ public class TicketSaleController {
     @PostMapping("/add-list")
     public void createTicketSales(@RequestBody List<TicketSaleDTO> DTOs){
         ticketSaleService.createTicketSales(DTOs);
+    }
+
+    @GetMapping("/sales-per-type/{matchId}")
+    public List<TicketSalesPerTypeDTO> getTicketSalesPerType(@PathVariable UUID matchId){
+        return  ticketSaleService.getTicketSalesPerType(matchId);
     }
 }
