@@ -8,6 +8,7 @@ import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.Income;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.repository.IncomeRepository;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -44,6 +45,16 @@ public class IncomeService {
 
     public List<Income> getAll() {
         return incomeRepository.findAll();
+    }
+
+    public void createIncomes(List<IncomeDTO> DTOs) {
+        List<Income> newIncomes = new ArrayList<Income>();
+        for (IncomeDTO dto: DTOs) {
+            Income newIncome= new Income(dto);
+            newIncome.setIncomeId(UUID.randomUUID());
+            newIncomes.add(newIncome);
+        }
+        incomeRepository.saveAll(newIncomes);
     }
 
 //    public void deleteIncome(String incomeId, LocalDateTime timestamp) {

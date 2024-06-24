@@ -6,6 +6,7 @@ import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.enumeration.ExpenseCategory;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -13,15 +14,17 @@ import java.util.UUID;
 @Table("expenses")
 public class Expense {
 
-    @PrimaryKeyColumn(name = "expense_id", type = PrimaryKeyType.PARTITIONED)
-    private UUID expenseId;
+    @PrimaryKeyColumn(name = "category", type = PrimaryKeyType.PARTITIONED)
+    private ExpenseCategory category;
 
-    @PrimaryKeyColumn(name = "date", ordinal = 0, ordering = Ordering.DESCENDING)
+    @PrimaryKeyColumn(name = "expense_creation_timestamp", ordinal = 0, ordering = Ordering.DESCENDING)
     private LocalDateTime expenseCreationTimestamp;
+
+    @PrimaryKeyColumn(name = "expense_id", ordinal = 1)
+    private UUID expenseId;
 
     private String description;
     private Double amount;
-    private String category;
 
     public UUID getId() {
         return expenseId;
@@ -55,11 +58,11 @@ public class Expense {
         this.amount = amount;
     }
 
-    public String getCategory() {
+    public ExpenseCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(ExpenseCategory category) {
         this.category = category;
     }
 }

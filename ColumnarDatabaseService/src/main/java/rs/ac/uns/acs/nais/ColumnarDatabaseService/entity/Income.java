@@ -13,10 +13,16 @@ import java.util.UUID;
 @Table("incomes")
 public class Income {
 
-    @PrimaryKeyColumn(name = "income_id", type = PrimaryKeyType.PARTITIONED)
+    @PrimaryKeyColumn(name = "year", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
+    private int year;
+
+    @PrimaryKeyColumn(name = "month", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
+    private int month;
+
+    @PrimaryKeyColumn(name = "income_id", ordinal = 2, type = PrimaryKeyType.CLUSTERED, ordering = Ordering.DESCENDING)
     private UUID incomeId;
 
-    @PrimaryKeyColumn(name = "date", ordinal = 0, ordering = Ordering.DESCENDING)
+    @Column("income_creation_timestamp")
     private LocalDateTime incomeCreationTimestamp;
 
     private String description;
@@ -28,6 +34,10 @@ public class Income {
         this.description = dto.getDescription();
         this.amount = dto.getAmount();
         this.source = dto.getSource();
+
+        // Extract year and month from incomeCreationTimestamp
+        this.year = dto.getIncomeCreationTimestamp().getYear();
+        this.month = dto.getIncomeCreationTimestamp().getMonthValue();
     }
 
     public Income(UUID incomeId, LocalDateTime incomeCreationTimestamp, String description, Double amount, String source) {
@@ -36,9 +46,30 @@ public class Income {
         this.description = description;
         this.amount = amount;
         this.source = source;
+
+        // Extract year and month from incomeCreationTimestamp
+        this.year = incomeCreationTimestamp.getYear();
+        this.month = incomeCreationTimestamp.getMonthValue();
     }
 
     public Income() {
+    }
+
+    // Getters and setters
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
     }
 
     public UUID getIncomeId() {
@@ -55,6 +86,10 @@ public class Income {
 
     public void setIncomeCreationTimestamp(LocalDateTime incomeCreationTimestamp) {
         this.incomeCreationTimestamp = incomeCreationTimestamp;
+
+        // Update year and month when setting incomeCreationTimestamp
+        this.year = incomeCreationTimestamp.getYear();
+        this.month = incomeCreationTimestamp.getMonthValue();
     }
 
     public String getDescription() {
@@ -65,11 +100,11 @@ public class Income {
         this.description = description;
     }
 
-    public double getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

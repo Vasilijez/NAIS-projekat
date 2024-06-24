@@ -12,16 +12,16 @@ import java.util.UUID;
 
 @Table("ticket_sales")
 public class TicketSale {
-
-    @PrimaryKeyColumn(name = "ticket_   id", type = PrimaryKeyType.PARTITIONED)
-    private UUID ticketId;
-    @PrimaryKeyColumn(name = "match_id",ordinal = 0, ordering = Ordering.ASCENDING)
+    @PrimaryKeyColumn(name = "match_id", type = PrimaryKeyType.PARTITIONED)
     private UUID matchId;
 
-    @PrimaryKeyColumn(name = "ticket_type", ordinal = 1, ordering = Ordering.ASCENDING)
+    @PrimaryKeyColumn(name = "ticket_type", ordinal = 0, ordering = Ordering.DESCENDING)
     private TicketType ticketType;
 
+    @PrimaryKeyColumn(name = "sale_date", ordinal = 1, ordering = Ordering.DESCENDING)
     private LocalDateTime saleDate;
+    @PrimaryKeyColumn(name = "ticket_id", ordinal = 2, ordering = Ordering.DESCENDING)
+    private UUID ticketId;
     private double amount;
     private int quantity;
     public TicketSale() {

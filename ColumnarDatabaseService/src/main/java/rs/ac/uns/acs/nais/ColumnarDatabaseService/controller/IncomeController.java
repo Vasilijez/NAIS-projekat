@@ -4,6 +4,7 @@ package rs.ac.uns.acs.nais.ColumnarDatabaseService.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.ExpenseDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.IncomeDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.Income;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.service.IncomeService;
@@ -37,4 +38,9 @@ public class IncomeController {
 //    public void deleteIncome(@PathVariable String id, LocalDateTime timestamp) {
 //        incomeService.deleteIncome(id, timestamp);
 //    }
+
+    @PostMapping("/add-list")
+    public void createIncomes(@RequestBody List<IncomeDTO> DTOs){
+        incomeService.createIncomes(DTOs);
+    }
 }

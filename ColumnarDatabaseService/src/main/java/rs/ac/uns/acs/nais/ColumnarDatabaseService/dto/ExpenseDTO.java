@@ -1,18 +1,32 @@
 package rs.ac.uns.acs.nais.ColumnarDatabaseService.dto;
 
-public class ExpenseDTO {
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.enumeration.ExpenseCategory;
 
-    private String description;
-    private Double amount;
-    private String category;
+import java.time.LocalDateTime;
+
+public class ExpenseDTO {
+    public String category;
+    public LocalDateTime expenseCreationTimestamp;
+    public String description;
+    public Double amount;
+
 
     public ExpenseDTO() {
     }
 
-    public ExpenseDTO(String description, Double amount, String category) {
+    public ExpenseDTO(LocalDateTime expenseCreationTimestamp, String description, Double amount, String category) {
+        this.expenseCreationTimestamp = expenseCreationTimestamp;
         this.description = description;
         this.amount = amount;
         this.category = category;
+    }
+
+    public LocalDateTime getExpenseCreationTimestamp() {
+        return expenseCreationTimestamp;
+    }
+
+    public void setExpenseCreationTimestamp(LocalDateTime expenseCreationTimestamp) {
+        this.expenseCreationTimestamp = expenseCreationTimestamp;
     }
 
     public String getDescription() {

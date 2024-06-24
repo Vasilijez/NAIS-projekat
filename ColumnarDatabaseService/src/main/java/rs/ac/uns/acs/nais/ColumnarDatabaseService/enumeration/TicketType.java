@@ -4,6 +4,5 @@ public enum TicketType {
     VIP,
     REGULAR,
     CHILD,
-    SENIOR,
-    OTHER;
+    SENIOR
 }

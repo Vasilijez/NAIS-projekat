@@ -7,6 +7,7 @@ import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.TicketSaleDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.TicketSale;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.repository.TicketSaleRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -51,5 +52,21 @@ public class TicketSaleService {
 
     public void deleteTicketSale(UUID ticketId) {
         ticketSaleRepository.deleteById(ticketId);
+    }
+
+    public void createTicketSales(List<TicketSaleDTO> DTOs) {
+        List<TicketSale> newSales = new ArrayList<TicketSale>();
+        for (TicketSaleDTO dto: DTOs) {
+            TicketSale ticketSale = new TicketSale();
+            ticketSale.setTicketId(UUID.randomUUID());
+            ticketSale.setMatchId(dto.getMatchId());
+            ticketSale.setTicketType(dto.getTicketType());
+            ticketSale.setSaleDate(dto.getSaleDate());
+            ticketSale.setAmount(dto.getAmount());
+            ticketSale.setQuantity(dto.getQuantity());
+
+            newSales.add(ticketSale);
+        }
+        ticketSaleRepository.saveAll(newSales);
     }
 }
