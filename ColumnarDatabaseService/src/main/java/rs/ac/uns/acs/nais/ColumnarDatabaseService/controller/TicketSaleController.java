@@ -31,7 +31,6 @@ public class TicketSaleController {
         return ResponseEntity.ok(createdTicketSale);
     }
 
-    // Add the PUT and DELETE mappings here
 
     @PutMapping("/{ticketId}")
     public ResponseEntity<TicketSale> updateTicketSale(@PathVariable UUID ticketId, @RequestBody TicketSaleDTO updatedTicketSale) {

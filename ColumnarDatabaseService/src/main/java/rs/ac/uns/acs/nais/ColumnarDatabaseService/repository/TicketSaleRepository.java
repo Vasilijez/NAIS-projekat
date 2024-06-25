@@ -18,12 +18,12 @@ public interface TicketSaleRepository extends CassandraRepository<TicketSale, UU
             "GROUP BY ticket_type")
             List<Object[]> getTicketSalesPerType(UUID matchId);
 
-    @Query("SELECT match_id, SUM(amount) as total_amount " +
-            "FROM ticket_sales " +
-            "GROUP BY match_id " +
-            "ORDER BY total_amount DESC " +
-            "LIMIT 1")
-    UUID getMatchWithHighestTotalAmount();
+//    @Query("SELECT match_id, SUM(amount) as total_amount " +
+//            "FROM ticket_sales " +
+//            "GROUP BY match_id " +
+//            "ORDER BY total_amount DESC " +
+//            "LIMIT 1")
+//    UUID getMatchWithHighestTotalAmount();
 
     @Query("SELECT match_id, SUM(amount) AS total_amount FROM ticket_sales GROUP BY match_id")
     List<Object[]> getMatchTotalAmounts();
