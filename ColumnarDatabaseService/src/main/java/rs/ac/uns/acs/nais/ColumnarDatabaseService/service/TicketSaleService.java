@@ -6,6 +6,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Service;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.TicketSaleDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.TicketSalesPerTypeDTO;
+import rs.ac.uns.acs.nais.ColumnarDatabaseService.dto.TicketTypeAndMatchIdDTO;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.entity.TicketSale;
 import rs.ac.uns.acs.nais.ColumnarDatabaseService.repository.TicketSaleRepository;
 
@@ -89,5 +90,33 @@ public class TicketSaleService {
             dtos.add(dto);
         }
         return dtos;
+    }
+
+
+    public UUID getMatchUUIDWithHighestTotalAmount(){
+        List<Object[]> results = ticketSaleRepository.getMatchTotalAmounts();
+        Map<UUID, Double> matchesWithTotalAmount = new HashMap<>();
+        for (Object obj: results) {
+            Object[] result = (Object[]) obj;
+
+            Row row = (Row) result[0];
+
+            matchesWithTotalAmount.put(row.getUuid("match_id"), row.getDouble("total_amount"));
+        }
+        return matchesWithTotalAmount.entrySet()
+                .stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse(null);
+    }
+
+    public TicketTypeAndMatchIdDTO getHighestPayingMatch() {
+
+        UUID matchId = getMatchUUIDWithHighestTotalAmount();
+
+        TicketTypeAndMatchIdDTO dto = new TicketTypeAndMatchIdDTO();
+        dto.matchId = matchId;
+        dto.ticketsPerType = getTicketSalesPerType(matchId);
+        return dto;
     }
 }

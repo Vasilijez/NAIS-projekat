@@ -15,11 +15,6 @@ import java.util.UUID;
 @Repository
 public interface ExpenseRepository extends CassandraRepository<Expense, UUID> {
 
-
-//    @Query("SELECT category, AVG(amount) AS average\n" +
-//            "FROM nais.expenses\n" +
-//            "GROUP BY category;\n")
-//    List<ExpensesCategorized> perCategory();
 @Query("SELECT category, AVG(amount) AS average " +
         "FROM expenses " +
         "WHERE expense_creation_timestamp >= :startDate " +
