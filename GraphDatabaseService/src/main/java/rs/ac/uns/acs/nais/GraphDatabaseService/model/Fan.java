@@ -16,7 +16,7 @@ public class Fan {
 
     private String name;
 
-    @Relationship(value = "WATCHED", direction = Relationship.Direction.OUTGOING)
+    @Relationship(value = "WATCHES", direction = Relationship.Direction.OUTGOING)
     private List<Watches> watched = new ArrayList<>();
 
     @Relationship(value = "CHEERS", direction = Relationship.Direction.OUTGOING)

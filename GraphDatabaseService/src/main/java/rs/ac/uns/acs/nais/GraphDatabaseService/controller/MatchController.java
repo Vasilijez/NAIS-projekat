@@ -16,6 +16,7 @@ public class MatchController {
     @Autowired
     private MatchService matchService;
 
+    @GetMapping
     public ResponseEntity<List<Match>> findAll(){
         return new ResponseEntity<>(matchService.findAll(), HttpStatus.OK);
     }

@@ -21,12 +21,6 @@ public class Plays {
 
     private int foulsMade;
 
-    /*TODO mozda dodati kao score za to koliko je dobro igrao ofanzivno, defanzivno,
-       koliko je imao kretnje tj koliko km je presao itd. da bi se moglo gledati
-       koliko je igrac bio dobar na toj poziciji, u fazonu igrac sto igra odbranu nece
-       davati golova a po trenutnim property-ima ce izgledati kao da lose igra
-     */
-
     public Plays(Long id, Match match, int assists, int goalsScored, int minutesPlayed, int foulsMade) {
         this.id = id;
         this.match = match;
