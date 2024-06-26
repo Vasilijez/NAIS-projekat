@@ -2,13 +2,15 @@ server:
   port: 9050
 
 spring:
+  application:
+    name: graph-database-service
+  kafka:
+    bootstrap-servers: kafka:9092
   neo4j:
     uri: bolt://localhost:7687
     authentication:
       username: neo4j
       password: password
-  application:
-    name: graph-database-service
 
 eureka:
   client:
@@ -18,7 +20,3 @@ eureka:
         enabled: true
   instance:
     prefer-ip-address: true
-
-
-
-

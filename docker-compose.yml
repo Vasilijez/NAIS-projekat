@@ -1,5 +1,9 @@
 version: '3.8'
 
+networks:
+  mynetwork:
+    driver: bridge
+
 services:
   eureka-server:
     build:
@@ -8,7 +12,8 @@ services:
     image: eureka-server:latest
     ports:
       - "8761:8761"
-
+    networks:
+      - mynetwork
 
   neo4j:
     image: neo4j
@@ -20,9 +25,9 @@ services:
       NEO4J_AUTH: neo4j/password
     volumes:
       - ./data:/data
-      #      Vasilije: trebace?
       - ./import:/var/lib/neo4j/import
-
+    networks:
+      - mynetwork
 
   graph-service:
     build:
@@ -32,16 +37,17 @@ services:
     depends_on:
       - eureka-server
       - neo4j
+      - kafka
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
       SPRING_NEO4J_URI: "bolt://neo4j:7687"
       SPRING_NEO4J_USERNAME: neo4j
       SPRING_NEO4J_PASSWORD: password
-    #    Vasilije: trebace? Slusa na portu 9050
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
     volumes:
       - ./data:/data
-
-
+    networks:
+      - mynetwork
 
   gateway-api:
     build:
@@ -56,36 +62,8 @@ services:
       - graph-service
     ports:
       - "9003:9000"
-
-#  relational-service:
-#     build:
-#       context: ./RelationalDatabaseService
-#       dockerfile: Dockerfile
-#     image: relational-service:latest
-#     depends_on:
-#       - postgresdb
-#       - eureka-server
-#     environment:
-#       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
-#       SPRING_DATASOURCE_URL: "jdbc:postgresql://postgresdb:5432/nais"
-#       SPRING_DATASOURCE_USERNAME: nais
-#       SPRING_DATASOURCE_PASSWORD: nais
-#     ports:
-#       - "9030:9030"
-
-# Vasilije: Trebace?
-#  pgadmin:
-#    image: dpage/pgadmin4
-#    environment:
-#      PGADMIN_DEFAULT_EMAIL: admin@example.com
-#      PGADMIN_DEFAULT_PASSWORD: admin
-#    ports:
-#      - "8080:80"
-#    depends_on:
-#      - postgresdb
-#    volumes:
-#      - ./data:/data
-#      - ./csv:/var/lib/pgadmin/import
+    networks:
+      - mynetwork
 
   columnar-key-value-service:
     build:
@@ -95,21 +73,17 @@ services:
     depends_on:
       - cassandradb
       - eureka-server
+      - kafka
     restart: always
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
       SPRING_DATA_CASSANDRA_CONTACT_POINTS: cassandradb
       SPRING_DATA_CASSANDRA_PORT: 9042
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
     ports:
       - "9050:9050"
-
-#   postgresdb:
-#     image: postgres:latest
-#     environment:
-#       POSTGRES_USER: "nais"
-#       POSTGRES_PASSWORD: "nais"
-#     volumes:
-#       - data:/var/lib/postgres
+    networks:
+      - mynetwork
 
   cassandradb:
     image: cassandra:latest
@@ -121,6 +95,33 @@ services:
       test: ["CMD-SHELL", "[ $$(nodetool statusgossip) = running ]"]
       interval: 30s
       timeout: 10s
+    networks:
+      - mynetwork
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - mynetwork
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    depends_on:
+      - zookeeper
+    networks:
+      - mynetwork
 
 volumes:
   data:

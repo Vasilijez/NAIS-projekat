@@ -101,7 +101,7 @@ public class PdfGenerationService {
         monthlyIncomeTable.setWidth(UnitValue.createPercentValue(50));
 
         monthlyIncomeTable.addHeaderCell(new Cell().add(new Paragraph("Month")));
-        monthlyIncomeTable.addHeaderCell(new Cell().add(new Paragraph("Total ($)")));
+        monthlyIncomeTable.addHeaderCell(new Cell().add(new Paragraph("Total($)")));
 
         for (MonthlyIncomeDTO dto:monthlyIncome) {
             monthlyIncomeTable.addCell(new Cell().add(new Paragraph(dto.getMonth())));
@@ -165,7 +165,7 @@ public class PdfGenerationService {
         expensesCategorizedTable.setWidth(UnitValue.createPercentValue(50));
 
         expensesCategorizedTable.addHeaderCell(new Cell().add(new Paragraph("Category")));
-        expensesCategorizedTable.addHeaderCell(new Cell().add(new Paragraph("Average amount")));
+        expensesCategorizedTable.addHeaderCell(new Cell().add(new Paragraph("Average amount($)")));
         for (ExpensesCategorized dto: expensesCategorized) {
             expensesCategorizedTable.addCell(new Cell().add(new Paragraph(dto.getCategory())));
 
