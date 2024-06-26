@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class GraphDatabaseServiceApplication {
+public class 	GraphDatabaseServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GraphDatabaseServiceApplication.class, args);
