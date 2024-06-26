@@ -18,7 +18,7 @@ public class FootballMatch {
 
     private String footballMatchID;
 
-    private Date startTime;
+    private LocalDateTime startTime;
 
     private String opponentName;
 
@@ -46,11 +46,11 @@ public class FootballMatch {
         this.footballMatchID = footballMatchID;
     }
 
-    public Date getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 

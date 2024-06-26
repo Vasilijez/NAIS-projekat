@@ -40,8 +40,12 @@ public class FootballMatchService {
         return footballMatchRepository.deleteFootballMatch(footballMatchID);
     }
 
+//    public List<FiveLatestFootballMatchesDTO> getTicketsStatsFromFiveLatestFootballMatches() {
+//        return fiveLatestFootballMatchesRepository.getTicketsStatsFromFiveLatestFootballMatches();
+//    }
+//
     public List<FiveLatestFootballMatchesDTO> getTicketsStatsFromFiveLatestFootballMatches() {
-        return fiveLatestFootballMatchesRepository.getTicketsStatsFromFiveLatestFootballMatches();
+        return footballMatchRepository.getTicketsStatsFromFiveLatestFootballMatches();
     }
 
     public List<PopularFootballMatchDTO> recommendPopularFootballMatch(String fanUsername) {

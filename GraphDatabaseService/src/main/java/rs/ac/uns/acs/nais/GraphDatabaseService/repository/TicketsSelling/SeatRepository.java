@@ -7,6 +7,7 @@ import rs.ac.uns.acs.nais.GraphDatabaseService.dto.TicketsSelling.RecommendedSea
 import rs.ac.uns.acs.nais.GraphDatabaseService.dto.TicketsSelling.RecommendedStandardTicketSeatsDTO;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.Seat;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -79,11 +80,11 @@ public interface SeatRepository extends Neo4jRepository<Seat, Long> {
             "MATCH (o)-[:CONSISTS_OF]->(t:Ticket), (t)<-[:VALID_FOR]-(sr:SeatReservation), (sr)<-[:BOOKED_FOR]-(s:Seat) " +
             "WITH s, COUNT(DISTINCT sr) AS seatReservationCountEver " +
             "MATCH (fm:FootballMatch) " +
-            "WHERE datetime($seasonTicketStartTime) <= fm.startTime <= datetime($seasonTicketStartTime) + duration({years: 1}) " +
+            "WHERE localDatetime($seasonTicketStartTime) <= fm.startTime <= localDatetime($seasonTicketStartTime) + duration({years: 1}) " +
             "OPTIONAL MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation), (sr)<-[:BOOKED_FOR]-(s) " +
             "WITH s, COLLECT(sr) as reservations, seatReservationCountEver " +
             "RETURN DISTINCT s as seat, CASE WHEN size(reservations) = 0 THEN 'NO' ELSE 'YES' END AS isReserved, seatReservationCountEver " +
             "ORDER BY isReserved, seatReservationCountEver DESC ")
-    List<RecommendedSeasonTicketSeatsDTO> recommendSeasonTicketSeat(String fanUsername, Date seasonTicketStartTime);
+    List<RecommendedSeasonTicketSeatsDTO> recommendSeasonTicketSeat(String fanUsername, LocalDateTime seasonTicketStartTime);
 
 }

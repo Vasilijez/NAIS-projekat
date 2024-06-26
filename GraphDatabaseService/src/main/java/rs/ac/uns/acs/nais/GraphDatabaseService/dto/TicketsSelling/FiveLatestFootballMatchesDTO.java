@@ -2,6 +2,7 @@ package rs.ac.uns.acs.nais.GraphDatabaseService.dto.TicketsSelling;
 
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
+import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.FootballMatch;
 
 import java.time.LocalDateTime;
 
@@ -11,13 +12,7 @@ public class FiveLatestFootballMatchesDTO {
     @GeneratedValue
     private Long id;
 
-    private String footballMatchID;
-
-//    private LocalDateTime startTime;
-
-    private String opponentName;
-
-    private String result;
+    private FootballMatch footballMatch;
 
     private Integer reservedTicketsNumber;
 
@@ -28,37 +23,28 @@ public class FiveLatestFootballMatchesDTO {
     public FiveLatestFootballMatchesDTO() {
     }
 
-    public FiveLatestFootballMatchesDTO(String footballMatchID, String opponentName, String result, Integer reservedTicketsNumber, Integer cancelledTicketsNumber, Integer paidTicketsNumber) {
-        this.footballMatchID = footballMatchID;
-        this.opponentName = opponentName;
-        this.result = result;
+    public FiveLatestFootballMatchesDTO(Long id, FootballMatch footballMatch, Integer reservedTicketsNumber, Integer cancelledTicketsNumber, Integer paidTicketsNumber) {
+        this.id = id;
+        this.footballMatch = footballMatch;
         this.reservedTicketsNumber = reservedTicketsNumber;
         this.cancelledTicketsNumber = cancelledTicketsNumber;
         this.paidTicketsNumber = paidTicketsNumber;
     }
 
-    public String getFootballMatchID() {
-        return footballMatchID;
+    public Long getId() {
+        return id;
     }
 
-    public void setFootballMatchID(String footballMatchID) {
-        this.footballMatchID = footballMatchID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getOpponentName() {
-        return opponentName;
+    public FootballMatch getFootballMatch() {
+        return footballMatch;
     }
 
-    public void setOpponentName(String opponentName) {
-        this.opponentName = opponentName;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
+    public void setFootballMatch(FootballMatch footballMatch) {
+        this.footballMatch = footballMatch;
     }
 
     public Integer getReservedTicketsNumber() {
@@ -87,13 +73,113 @@ public class FiveLatestFootballMatchesDTO {
 
     @Override
     public String toString() {
-        return "FiveLatestFootballMatchesDTO{" +
-                "footballMatchID='" + footballMatchID + '\'' +
-                ", opponentName='" + opponentName + '\'' +
-                ", result='" + result + '\'' +
+        return "\nFiveLatestFootballMatchesDTO{" +
+                "id=" + id +
+                ", footballMatch=" + footballMatch +
                 ", reservedTicketsNumber=" + reservedTicketsNumber +
                 ", cancelledTicketsNumber=" + cancelledTicketsNumber +
                 ", paidTicketsNumber=" + paidTicketsNumber +
-                '}';
+                "}\n";
     }
 }
+
+
+//package rs.ac.uns.acs.nais.GraphDatabaseService.dto.TicketsSelling;
+//
+//import org.springframework.data.neo4j.core.schema.GeneratedValue;
+//import org.springframework.data.neo4j.core.schema.Id;
+//
+//import java.time.LocalDateTime;
+//
+//public class FiveLatestFootballMatchesDTO {
+//
+//    @Id
+//    @GeneratedValue
+//    private Long id;
+//
+//    private String footballMatchID;
+//
+////    private LocalDateTime startTime;
+//
+//    private String opponentName;
+//
+//    private String result;
+//
+//    private Integer reservedTicketsNumber;
+//
+//    private Integer cancelledTicketsNumber;
+//
+//    private Integer paidTicketsNumber;
+//
+//    public FiveLatestFootballMatchesDTO() {
+//    }
+//
+//    public FiveLatestFootballMatchesDTO(String footballMatchID, String opponentName, String result, Integer reservedTicketsNumber, Integer cancelledTicketsNumber, Integer paidTicketsNumber) {
+//        this.footballMatchID = footballMatchID;
+//        this.opponentName = opponentName;
+//        this.result = result;
+//        this.reservedTicketsNumber = reservedTicketsNumber;
+//        this.cancelledTicketsNumber = cancelledTicketsNumber;
+//        this.paidTicketsNumber = paidTicketsNumber;
+//    }
+//
+//    public String getFootballMatchID() {
+//        return footballMatchID;
+//    }
+//
+//    public void setFootballMatchID(String footballMatchID) {
+//        this.footballMatchID = footballMatchID;
+//    }
+//
+//    public String getOpponentName() {
+//        return opponentName;
+//    }
+//
+//    public void setOpponentName(String opponentName) {
+//        this.opponentName = opponentName;
+//    }
+//
+//    public String getResult() {
+//        return result;
+//    }
+//
+//    public void setResult(String result) {
+//        this.result = result;
+//    }
+//
+//    public Integer getReservedTicketsNumber() {
+//        return reservedTicketsNumber;
+//    }
+//
+//    public void setReservedTicketsNumber(Integer reservedTicketsNumber) {
+//        this.reservedTicketsNumber = reservedTicketsNumber;
+//    }
+//
+//    public Integer getCancelledTicketsNumber() {
+//        return cancelledTicketsNumber;
+//    }
+//
+//    public void setCancelledTicketsNumber(Integer cancelledTicketsNumber) {
+//        this.cancelledTicketsNumber = cancelledTicketsNumber;
+//    }
+//
+//    public Integer getPaidTicketsNumber() {
+//        return paidTicketsNumber;
+//    }
+//
+//    public void setPaidTicketsNumber(Integer paidTicketsNumber) {
+//        this.paidTicketsNumber = paidTicketsNumber;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "FiveLatestFootballMatchesDTO{" +
+//                "footballMatchID='" + footballMatchID + '\'' +
+//                ", opponentName='" + opponentName + '\'' +
+//                ", result='" + result + '\'' +
+//                ", reservedTicketsNumber=" + reservedTicketsNumber +
+//                ", cancelledTicketsNumber=" + cancelledTicketsNumber +
+//                ", paidTicketsNumber=" + paidTicketsNumber +
+//                '}';
+//    }
+//}

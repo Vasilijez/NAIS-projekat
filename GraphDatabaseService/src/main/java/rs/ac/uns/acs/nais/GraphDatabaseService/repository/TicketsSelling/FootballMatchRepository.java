@@ -8,6 +8,7 @@ import rs.ac.uns.acs.nais.GraphDatabaseService.dto.TicketsSelling.PopularFootbal
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.FootballMatch;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.Seat;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public interface FootballMatchRepository extends Neo4jRepository<FootballMatch, 
 
     @Query("CREATE (fm: FootballMatch {footballMatchID: $footballMatchID, startTime: $startTime, opponentName: $opponentName, result: $result}) " +
             "RETURN fm ")
-    FootballMatch createFootballMatch(String footballMatchID, Date startTime, String opponentName, String result);
+    FootballMatch createFootballMatch(String footballMatchID, LocalDateTime startTime, String opponentName, String result);
 
     @Query("MATCH (fm: FootballMatch {footballMatchID: $footballMatchID}) " +
             "RETURN fm  ")
@@ -25,28 +26,28 @@ public interface FootballMatchRepository extends Neo4jRepository<FootballMatch, 
     @Query("MATCH (fm: FootballMatch {footballMatchID: $footballMatchID}) " +
             "SET fm.footballMatchID = $updatingFootballMatchID, fm.startTime = $startTime, fm.opponentName = $opponentName, fm.result = $result " +
             "RETURN fm ")
-    FootballMatch updateFootballMatch(String footballMatchID, String updatingFootballMatchID, Date startTime, String opponentName, String result);
+    FootballMatch updateFootballMatch(String footballMatchID, String updatingFootballMatchID, LocalDateTime startTime, String opponentName, String result);
 
     @Query("MATCH (fm: FootballMatch {footballMatchID: $footballMatchID}) " +
             "DETACH DELETE fm " +
             "RETURN count(fm) > 0 ")
     boolean deleteFootballMatch(String footballMatchID);
 
-//    @Query("MATCH (fm:FootballMatch) " +
-//            "WITH fm " +
-//            "ORDER BY date(fm.startTime) DESC " +
-//            "LIMIT 5 " +
-//            "MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation)  " +
-//            "WITH fm, COUNT(sr) AS reservedTicketsNumber " +
-//            "OPTIONAL MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation), (sr)-[:VALID_FOR]->(t:Ticket), (t)<-[:CONSISTS_OF]-(o:Order)  " +
-//            "WHERE o.status = \"Cancelled\" " +
-//            "WITH fm, COUNT(t) AS cancelledTicketsNumber, reservedTicketsNumber " +
-//            "RETURN fm AS footballMatch, reservedTicketsNumber, cancelledTicketsNumber, reservedTicketsNumber - cancelledTicketsNumber AS paidTicketsNumber " +
-//            "ORDER BY paidTicketsNumber DESC ")
-//    List<FiveLatestFootballMatchesDTO> getTicketsStatsFromFiveLatestFootballMatches();
+    @Query("MATCH (fm:FootballMatch) " +
+            "WITH fm " +
+            "ORDER BY localDateTime(fm.startTime) DESC " +
+            "LIMIT 5 " +
+            "MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation)  " +
+            "WITH fm, COUNT(sr) AS reservedTicketsNumber " +
+            "OPTIONAL MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation), (sr)-[:VALID_FOR]->(t:Ticket), (t)<-[:CONSISTS_OF]-(o:Order)  " +
+            "WHERE o.status = \"Cancelled\" " +
+            "WITH fm, COUNT(t) AS cancelledTicketsNumber, reservedTicketsNumber " +
+            "RETURN fm AS footballMatch, reservedTicketsNumber, cancelledTicketsNumber, reservedTicketsNumber - cancelledTicketsNumber AS paidTicketsNumber " +
+            "ORDER BY paidTicketsNumber DESC ")
+    List<FiveLatestFootballMatchesDTO> getTicketsStatsFromFiveLatestFootballMatches();
 
     @Query("MATCH (fm:FootballMatch)  " +
-            "WHERE fm.startTime >= datetime() " +
+            "WHERE fm.startTime >= localDateTime() " +
             "MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation) " +
             "WITH fm, COUNT(sr) AS totalSeatReservationsNumber " +
             "MATCH (rFan:Fan) " +
