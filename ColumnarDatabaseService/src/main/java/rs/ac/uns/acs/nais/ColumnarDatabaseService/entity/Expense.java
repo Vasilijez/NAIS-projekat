@@ -26,6 +26,17 @@ public class Expense {
     private String description;
     private Double amount;
 
+    public Expense() {
+    }
+
+    public Expense(ExpenseCategory category, LocalDateTime expenseCreationTimestamp, UUID expenseId, String description, Double amount) {
+        this.category = category;
+        this.expenseCreationTimestamp = expenseCreationTimestamp;
+        this.expenseId = expenseId;
+        this.description = description;
+        this.amount = amount;
+    }
+
     public UUID getId() {
         return expenseId;
     }
