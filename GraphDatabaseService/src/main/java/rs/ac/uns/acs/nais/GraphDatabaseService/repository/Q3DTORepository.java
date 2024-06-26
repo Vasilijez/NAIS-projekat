@@ -20,7 +20,7 @@ public interface Q3DTORepository extends Neo4jRepository<Q3DTO, Long> {
             "CREATE (q:Q3DTO {playerName: playerName, position: position, teamName: teamName}) " +
             "RETURN q")
     List<Q3DTO> query3();
-//TODO proveriti ovaj id 556 kakve ce rez prikazati posto cu nove podatke ubacivati
+//TODO proveriti ovaj id 556 kakve ce rez prikazati posto cu nove podatke ubacivati | trenutno vraca prazno
 
 //    @Query("MATCH (f:Fan)-[:LIKES]->(p:Player)-[:IS_IN]->(t:Team)<-[:CHEERS]-(f2:Fan {idOriginal: 556})-[:LIKES]->(p2:Player) " +
 //            "WHERE p.position = p2.position " +

@@ -4,6 +4,8 @@ import org.neo4j.driver.exceptions.DatabaseException;
 import org.springframework.stereotype.Service;
 import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q1DTO;
 import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q3DTO;
+import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q4DTO;
+import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q5DTO;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.Team;
 import rs.ac.uns.acs.nais.GraphDatabaseService.repository.*;
 
@@ -64,4 +66,11 @@ public class TeamService {
         return q3DTORepository.query3();
     }
 
+    public List<Q4DTO> query4(){
+        return q4DTORepository.query4();
+    }
+
+    public List<Q5DTO> query5() {
+        return q5DTORepository.query5();
+    }
 }
