@@ -13,6 +13,15 @@ public interface LoyaltyProgramRepository extends Neo4jRepository<LoyaltyProgram
             "RETURN lp1 ")
     LoyaltyProgram createLoyaltyProgram(String level, Double discountRate);
 
+    @Query("OPTIONAL MATCH (lp:LoyaltyProgram) " +
+            "WHERE lp.level = $level " +
+            "WITH lp " +
+            "WHERE lp IS NULL " +
+            "CREATE (newLp: LoyaltyProgram {level: $level, discountRate: $discountRate}) " +
+            "RETURN count(newLp) >= 1 AS isCreated ")
+    Boolean createLoyaltyProgramSAGA(String level, Double discountRate);
+
+
     @Query("MATCH (n:LoyaltyProgram {level: $level}) " +
             "RETURN  n")
     LoyaltyProgram findLoyaltyProgram(String level);

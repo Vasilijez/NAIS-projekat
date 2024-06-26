@@ -5,7 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.LoyaltyProgram;
+import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.TransactionStatus;
 import rs.ac.uns.acs.nais.GraphDatabaseService.service.TicketsSelling.LoyaltyProgramService;
+
+import javax.swing.text.StyledEditorKit;
 
 @RestController
 @RequestMapping("/loyalty-program")
@@ -22,6 +25,18 @@ public class LoyaltyProgramController {
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Something went wrong!");
         }
+    }
+
+    @PostMapping("/saga")
+    public ResponseEntity<String> createLoyaltyProgramSAGA(@RequestBody LoyaltyProgram loyaltyProgram){
+        String requestMessage = loyaltyProgramService.createLoyaltyProgramSAGA(loyaltyProgram);
+        return ResponseEntity.ok(requestMessage);
+    }
+
+    @GetMapping("/saga/checkStatus/{requestId}")
+    public ResponseEntity<String> checkStatus(@PathVariable String requestId){
+        TransactionStatus transactionStatus = loyaltyProgramService.checkStatus(requestId);
+        return ResponseEntity.ok(transactionStatus.toString());
     }
 
     @GetMapping("/{level}")

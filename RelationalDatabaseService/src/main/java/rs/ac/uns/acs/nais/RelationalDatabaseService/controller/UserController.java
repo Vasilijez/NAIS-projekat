@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import rs.ac.uns.acs.nais.RelationalDatabaseService.model.User;
+import rs.ac.uns.acs.nais.RelationalDatabaseService.service.LoyaltyProgramService;
 import rs.ac.uns.acs.nais.RelationalDatabaseService.service.UserService;
 
 import java.util.List;
@@ -45,4 +46,5 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
+
 }

@@ -10,6 +10,15 @@ services:
       - "8761:8761"
 
 
+  #  TODO: Eureka treba da ga prepozna ili ne?
+  nats:
+    image: 'nats:latest'
+    expose:
+      - "4222"
+    ports:
+      - "4222:4222"
+
+
   neo4j:
     image: neo4j
     container_name: neo4j
@@ -24,6 +33,46 @@ services:
       - ./import:/var/lib/neo4j/import
 
 
+  postgresdb:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "nais"
+      POSTGRES_PASSWORD: "nais"
+    volumes:
+      - data:/var/lib/postgres
+
+
+  relational-service:
+    build:
+      context: ./RelationalDatabaseService
+      dockerfile: Dockerfile
+    image: relational-service:latest
+    depends_on:
+      - postgresdb
+      - eureka-server
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgresdb:5432/nais"
+      SPRING_DATASOURCE_USERNAME: nais
+      SPRING_DATASOURCE_PASSWORD: nais
+    ports:
+      - "9030:9030"
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgresdb
+    volumes:
+      - ./data:/data
+      - ./csv:/var/lib/pgadmin/import
+
+
   graph-service:
     build:
       context: ./GraphDatabaseService
@@ -32,15 +81,16 @@ services:
     depends_on:
       - eureka-server
       - neo4j
+      - relational-service
+      - nats
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
       SPRING_NEO4J_URI: "bolt://neo4j:7687"
       SPRING_NEO4J_USERNAME: neo4j
       SPRING_NEO4J_PASSWORD: password
-    #    Vasilije: trebace? Slusa na portu 9050
+    #    Vasilije: slusa na portu 9050
     volumes:
       - ./data:/data
-
 
 
   gateway-api:
@@ -52,75 +102,40 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
     depends_on:
       - eureka-server
-      - columnar-key-value-service
+      #      - columnar-key-value-service
       - graph-service
+      - relational-service
     ports:
       - "9003:9000"
 
-#  relational-service:
-#     build:
-#       context: ./RelationalDatabaseService
-#       dockerfile: Dockerfile
-#     image: relational-service:latest
-#     depends_on:
-#       - postgresdb
-#       - eureka-server
-#     environment:
-#       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
-#       SPRING_DATASOURCE_URL: "jdbc:postgresql://postgresdb:5432/nais"
-#       SPRING_DATASOURCE_USERNAME: nais
-#       SPRING_DATASOURCE_PASSWORD: nais
-#     ports:
-#       - "9030:9030"
 
-# Vasilije: Trebace?
-#  pgadmin:
-#    image: dpage/pgadmin4
-#    environment:
-#      PGADMIN_DEFAULT_EMAIL: admin@example.com
-#      PGADMIN_DEFAULT_PASSWORD: admin
-#    ports:
-#      - "8080:80"
+#  columnar-key-value-service:
+#    build:
+#      context: ./ColumnarDatabaseService
+#      dockerfile: Dockerfile
+#    image: columnar-key-value-service:latest
 #    depends_on:
-#      - postgresdb
+#      - cassandradb
+#      - eureka-server
+#    restart: always
+#    environment:
+#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+#      SPRING_DATA_CASSANDRA_CONTACT_POINTS: cassandradb
+#      SPRING_DATA_CASSANDRA_PORT: 9042
+#    ports:
+#      - "9050:9050"
+
+#  cassandradb:
+#    image: cassandra:latest
+#    ports:
+#      - "9042:9042"
 #    volumes:
-#      - ./data:/data
-#      - ./csv:/var/lib/pgadmin/import
+#      - data:/var/lib/cassandra
+#    healthcheck:
+#      test: ["CMD-SHELL", "[ $$(nodetool statusgossip) = running ]"]
+#      interval: 30s
+#      timeout: 10s
 
-  columnar-key-value-service:
-    build:
-      context: ./ColumnarDatabaseService
-      dockerfile: Dockerfile
-    image: columnar-key-value-service:latest
-    depends_on:
-      - cassandradb
-      - eureka-server
-    restart: always
-    environment:
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
-      SPRING_DATA_CASSANDRA_CONTACT_POINTS: cassandradb
-      SPRING_DATA_CASSANDRA_PORT: 9042
-    ports:
-      - "9050:9050"
-
-#   postgresdb:
-#     image: postgres:latest
-#     environment:
-#       POSTGRES_USER: "nais"
-#       POSTGRES_PASSWORD: "nais"
-#     volumes:
-#       - data:/var/lib/postgres
-
-  cassandradb:
-    image: cassandra:latest
-    ports:
-      - "9042:9042"
-    volumes:
-      - data:/var/lib/cassandra
-    healthcheck:
-      test: ["CMD-SHELL", "[ $$(nodetool statusgossip) = running ]"]
-      interval: 30s
-      timeout: 10s
 
 volumes:
   data:
