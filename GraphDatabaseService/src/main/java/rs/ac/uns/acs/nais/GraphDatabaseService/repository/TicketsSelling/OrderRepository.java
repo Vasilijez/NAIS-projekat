@@ -22,8 +22,8 @@ public interface OrderRepository extends Neo4jRepository<Order, Long> {
     Order findOrder(String orderID);
 
     @Query("MATCH (o:Order {orderID: $orderID})  " +
-            "SET o.orderID = $updatingOrderID, o.totalPrice = $totalPrice, o.creationDate = $creationDate, o.deliveryType = $deliveryType, o.status = $status, o.paymentMethod = $paymentMethod, username: $username  " +
-            "RETURN o ")
+            "SET o.orderID = $updatingOrderID, o.totalPrice = $totalPrice, o.creationDate = $creationDate, o.deliveryType = $deliveryType, o.status = $status, o.paymentMethod = $paymentMethod, o.username: $username  " +
+            "RETURN o as order ")
     Order updateOrder(String orderID, String updatingOrderID, Double totalPrice, LocalDate creationDate, String deliveryType, String status, String paymentMethod, String username);
 
     @Query("MATCH (o:Order {orderID: $orderID})  " +

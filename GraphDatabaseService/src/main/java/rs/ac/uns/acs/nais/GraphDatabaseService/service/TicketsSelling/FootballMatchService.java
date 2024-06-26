@@ -24,7 +24,7 @@ public class FootballMatchService {
         this.fiveLatestFootballMatchesRepository = fiveLatestFootballMatchesRepository;
     }
 
-    public FootballMatch createFootballMatch(FootballMatch footballMatch) {
+    public Boolean createFootballMatch(FootballMatch footballMatch) {
         return footballMatchRepository.createFootballMatch(footballMatch.getFootballMatchID(), footballMatch.getStartTime(), footballMatch.getOpponentName(), footballMatch.getResult());
     }
 

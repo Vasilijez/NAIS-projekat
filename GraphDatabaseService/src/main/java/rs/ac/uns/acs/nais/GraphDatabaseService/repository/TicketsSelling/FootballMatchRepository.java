@@ -15,9 +15,13 @@ import java.util.List;
 @Repository
 public interface FootballMatchRepository extends Neo4jRepository<FootballMatch, Long> {
 
-    @Query("CREATE (fm: FootballMatch {footballMatchID: $footballMatchID, startTime: $startTime, opponentName: $opponentName, result: $result}) " +
-            "RETURN fm ")
-    FootballMatch createFootballMatch(String footballMatchID, LocalDateTime startTime, String opponentName, String result);
+    @Query("OPTIONAL MATCH (fm:FootballMatch) " +
+            "WHERE (fm.startTime = $startTime and fm.opponentName = $opponentName) or fm.footballMatchID = $footballMatchID " +
+            "WITH fm " +
+            "WHERE fm IS NULL " +
+            "CREATE (newFm: FootballMatch {footballMatchID: $footballMatchID, startTime: $startTime, opponentName: $opponentName, result: $result}) " +
+            "RETURN count(newFm) >= 1 as isCreated ")
+    Boolean createFootballMatch(String footballMatchID, LocalDateTime startTime, String opponentName, String result);
 
     @Query("MATCH (fm: FootballMatch {footballMatchID: $footballMatchID}) " +
             "RETURN fm  ")
