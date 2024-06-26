@@ -87,21 +87,21 @@ services:
 #      - ./data:/data
 #      - ./csv:/var/lib/pgadmin/import
 
-  # columnar-key-value-service:
-  #    build:
-  #      context: ./ColumnarDatabaseService
-  #      dockerfile: Dockerfile
-  #    image: columnar-key-value-service:latest
-  #    depends_on:
-  #      - cassandradb
-  #      - eureka-server
-  #    restart: always
-  #    environment:
-  #      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
-  #      SPRING_DATA_CASSANDRA_CONTACT_POINTS: cassandradb
-  #      SPRING_DATA_CASSANDRA_PORT: 9042
-  #    ports:
-  #      - "9050:9050"
+  columnar-key-value-service:
+    build:
+      context: ./ColumnarDatabaseService
+      dockerfile: Dockerfile
+    image: columnar-key-value-service:latest
+    depends_on:
+      - cassandradb
+      - eureka-server
+    restart: always
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+      SPRING_DATA_CASSANDRA_CONTACT_POINTS: cassandradb
+      SPRING_DATA_CASSANDRA_PORT: 9042
+    ports:
+      - "9050:9050"
 
 #   postgresdb:
 #     image: postgres:latest
@@ -111,16 +111,16 @@ services:
 #     volumes:
 #       - data:/var/lib/postgres
 
-  # cassandradb:
-  #    image: cassandra:latest
-  #    ports:
-  #      - "9042:9042"
-  #    volumes:
-  #      - data:/var/lib/cassandra
-  #    healthcheck:
-  #      test: ["CMD-SHELL", "[ $$(nodetool statusgossip) = running ]"]
-  #      interval: 30s
-  #      timeout: 10s
+  cassandradb:
+    image: cassandra:latest
+    ports:
+      - "9042:9042"
+    volumes:
+      - data:/var/lib/cassandra
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(nodetool statusgossip) = running ]"]
+      interval: 30s
+      timeout: 10s
 
 volumes:
   data:
