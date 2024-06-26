@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q1DTO;
+import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q3DTO;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.Team;
 import rs.ac.uns.acs.nais.GraphDatabaseService.service.TeamService;
 
@@ -34,5 +36,15 @@ public class TeamController {
         else{
             return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping(value = "/q1")
+    public ResponseEntity<Q1DTO> query1(){
+        return new ResponseEntity<>(teamService.query1(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/q3")
+    public ResponseEntity<List<Q3DTO>> query3(){
+        return new ResponseEntity<>(teamService.query3(), HttpStatus.OK);
     }
 }

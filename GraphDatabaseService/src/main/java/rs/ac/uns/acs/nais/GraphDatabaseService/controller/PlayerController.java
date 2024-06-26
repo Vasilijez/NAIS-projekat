@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q2DTO;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.Player;
 import rs.ac.uns.acs.nais.GraphDatabaseService.service.PlayerService;
 
@@ -34,5 +35,10 @@ public class PlayerController {
         else{
             return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping(value = "/q2")
+    public ResponseEntity<Q2DTO> query2(){
+        return new ResponseEntity<>(playerService.query2(), HttpStatus.OK);
     }
 }

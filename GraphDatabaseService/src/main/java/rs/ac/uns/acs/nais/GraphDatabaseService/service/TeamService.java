@@ -2,8 +2,10 @@ package rs.ac.uns.acs.nais.GraphDatabaseService.service;
 
 import org.neo4j.driver.exceptions.DatabaseException;
 import org.springframework.stereotype.Service;
+import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q1DTO;
+import rs.ac.uns.acs.nais.GraphDatabaseService.dto.Q3DTO;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.Team;
-import rs.ac.uns.acs.nais.GraphDatabaseService.repository.TeamRepository;
+import rs.ac.uns.acs.nais.GraphDatabaseService.repository.*;
 
 import java.util.List;
 
@@ -12,8 +14,20 @@ public class TeamService {
 
     private final TeamRepository teamRepository;
 
-    public TeamService(TeamRepository teamRepository) {
+    private final Q1DTORepository q1DTORepository;
+
+    private final Q3DTORepository q3DTORepository;
+
+    private final Q4DTORepository q4DTORepository;
+
+    private final Q5DTORepository q5DTORepository;
+
+    public TeamService(TeamRepository teamRepository, Q1DTORepository q1DTORepository, Q3DTORepository q3DTORepository, Q4DTORepository q4DTORepository, Q5DTORepository q5DTORepository) {
         this.teamRepository = teamRepository;
+        this.q1DTORepository = q1DTORepository;
+        this.q3DTORepository = q3DTORepository;
+        this.q4DTORepository = q4DTORepository;
+        this.q5DTORepository = q5DTORepository;
     }
 
     public List<Team> findAll(){
@@ -41,4 +55,13 @@ public class TeamService {
 
         return true;
     }
+
+    public Q1DTO query1() {
+        return q1DTORepository.query1();
+    }
+
+    public List<Q3DTO> query3() {
+        return q3DTORepository.query3();
+    }
+
 }
