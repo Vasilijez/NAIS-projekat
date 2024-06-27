@@ -6,6 +6,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import rs.ac.uns.acs.nais.GraphDatabaseService.dto.TicketsSelling.KafkaMatchToGraphdbDTO;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.FootballMatch;
@@ -19,6 +20,11 @@ public class KafkaConsumerService {
 
     @Autowired
     private FootballMatchRepository footballMatchRepository;
+
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+
+    private final String DELETE_MATCH_TOPIC = "delete_match";
 
     @KafkaListener(topics = "match_record", groupId = "group_id")
     public void consume(String jsonMessage) {
@@ -37,11 +43,18 @@ public class KafkaConsumerService {
             // Deserialize from JSON
             KafkaMatchToGraphdbDTO matchDto = mapper.readValue(jsonMessage, KafkaMatchToGraphdbDTO.class);
 
-            // Convert to FootballMatch
-            FootballMatch match = convertToFootballMatch(matchDto);
+            // Check if a match with the same opponent name and start time exists
+            boolean matchExists = footballMatchRepository.existsByOpponentNameAndStartTime(matchDto.getOpponentName(), matchDto.getStartTime());
 
-            // Save to the repository
-            footballMatchRepository.save(match);
+            if (matchExists) {
+                // If match exists, send a notification to delete the match from the columnar database
+                kafkaTemplate.send(DELETE_MATCH_TOPIC, jsonMessage);
+            } else {
+                // Convert to FootballMatch
+                FootballMatch match = convertToFootballMatch(matchDto);
+                // Save to the repository
+                footballMatchRepository.save(match);
+            }
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Failed to convert from json", e);
         }

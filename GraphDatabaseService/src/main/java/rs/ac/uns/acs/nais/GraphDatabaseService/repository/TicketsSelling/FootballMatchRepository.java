@@ -14,6 +14,7 @@ import java.util.List;
 
 @Repository
 public interface FootballMatchRepository extends Neo4jRepository<FootballMatch, Long> {
+    boolean existsByOpponentNameAndStartTime(String opponentName, LocalDateTime startTime);
 
     @Query("CREATE (fm: FootballMatch {footballMatchID: $footballMatchID, startTime: $startTime, opponentName: $opponentName, result: $result}) " +
             "RETURN fm ")
