@@ -52,4 +52,8 @@ public class ExpenseController {
     public List<ExpenseDTO> getAllByCategory(@PathVariable String category){
         return expenseService.getAllByCategory(category);
     }
+    @GetMapping("/all/{category}/2022")
+    public List<ExpenseDTO> getAllByCategoryIn2022(@PathVariable String category){
+        return expenseService.getAllByCategory2(category);
+    }
 }

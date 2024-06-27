@@ -121,4 +121,13 @@ public class ExpenseService {
                 .map(ExpenseMapper.mapper::expenseToExpenseDTO)
                 .collect(Collectors.toList());
     }
+    public List<ExpenseDTO> getAllByCategory2(String category) {
+        LocalDateTime startDate = LocalDateTime.of(2022,01, 01,00,00, 00);
+        LocalDateTime endDate = LocalDateTime.of(2023,01, 01,00,00, 00);
+
+        return expenseRepository.getAllByCategory2(category.toUpperCase(), startDate, endDate).
+                stream()
+                .map(ExpenseMapper.mapper::expenseToExpenseDTO)
+                .collect(Collectors.toList());
+    }
 }

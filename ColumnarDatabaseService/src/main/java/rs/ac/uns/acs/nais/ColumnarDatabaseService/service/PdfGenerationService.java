@@ -124,7 +124,7 @@ public class PdfGenerationService {
         document.add(new Paragraph("\n"));
 
 
-        List<ExpenseDTO> expenseDTOS = expenseService.getAllByCategory("SALARIES");
+        List<ExpenseDTO> expenseDTOS = expenseService.getAllByCategory2("SALARIES");
 
         Table tableSalaries = new Table(UnitValue.createPercentArray(new float[]{1, 2, 3, 2}));
         tableSalaries.setWidth(UnitValue.createPercentValue(100));

@@ -26,6 +26,15 @@ public interface ExpenseRepository extends CassandraRepository<Expense, UUID> {
 
 @Query("SELECT * " +
         "FROM expenses " +
-        "WHERE category = :category")
+        "WHERE category = :category AND " +
+        "expense_creation_timestamp >= :startDate " +
+        "AND expense_creation_timestamp <= :endDate")
+
+    List<Expense> getAllByCategory2(String category, LocalDateTime startDate, LocalDateTime endDate);
+
+    @Query("SELECT * " +
+            "FROM expenses " +
+            "WHERE category = :category")
+
     List<Expense> getAllByCategory(String category);
 }
