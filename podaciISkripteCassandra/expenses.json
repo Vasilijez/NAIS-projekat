@@ -1,0 +1,1202 @@
+[
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-09-19T03:33:14",
+        "description": "Flight tickets",
+        "amount": 4629.38
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-12-23T20:01:36",
+        "description": "Office chairs",
+        "amount": 9411.76
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2022-09-04T18:05:19",
+        "description": "Employee salaries",
+        "amount": 6430.29
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2022-11-10T12:01:22",
+        "description": "Electricity bill",
+        "amount": 6858.02
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-12-01T22:27:39",
+        "description": "Online advertising",
+        "amount": 3104.44
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2022-04-03T00:06:55",
+        "description": "Team building event",
+        "amount": 9702.91
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2023-01-23T13:39:10",
+        "description": "Equipment repairs",
+        "amount": 5459.55
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2022-02-05T18:38:59",
+        "description": "Health insurance",
+        "amount": 2056.17
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-05-08T07:58:26",
+        "description": "Consulting fees",
+        "amount": 5686.1
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2023-07-01T22:05:48",
+        "description": "Online training course",
+        "amount": 234.88
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2022-03-13T09:21:53",
+        "description": "Corporate taxes",
+        "amount": 2238.18
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2022-01-07T18:58:39",
+        "description": "Miscellaneous office expenses",
+        "amount": 8027.96
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-06-10T05:43:58",
+        "description": "Flight tickets",
+        "amount": 6619.0
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2022-04-05T17:34:56",
+        "description": "Office chairs",
+        "amount": 1781.9
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2022-02-21T21:30:44",
+        "description": "Employee salaries",
+        "amount": 1976.57
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-02-07T08:44:06",
+        "description": "Electricity bill",
+        "amount": 7360.39
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-01-18T13:45:19",
+        "description": "Online advertising",
+        "amount": 430.88
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2022-03-23T15:31:14",
+        "description": "Team building event",
+        "amount": 2673.39
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-12-23T16:17:31",
+        "description": "Equipment repairs",
+        "amount": 129.78
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-09-22T23:44:20",
+        "description": "Health insurance",
+        "amount": 9522.02
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-10-16T18:24:01",
+        "description": "Consulting fees",
+        "amount": 4947.13
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-09-01T13:00:42",
+        "description": "Online training course",
+        "amount": 7591.64
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2022-06-17T19:01:47",
+        "description": "Corporate taxes",
+        "amount": 6885.97
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2023-09-11T13:48:26",
+        "description": "Miscellaneous office expenses",
+        "amount": 4542.01
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-04-10T19:06:35",
+        "description": "Flight tickets",
+        "amount": 8741.41
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2022-11-09T02:18:07",
+        "description": "Office chairs",
+        "amount": 3677.08
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2022-12-30T17:37:11",
+        "description": "Employee salaries",
+        "amount": 9307.96
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-11-29T00:56:36",
+        "description": "Electricity bill",
+        "amount": 3880.92
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-09-29T00:25:01",
+        "description": "Online advertising",
+        "amount": 7558.1
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-06-19T15:40:59",
+        "description": "Team building event",
+        "amount": 1834.4
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2023-03-01T04:25:08",
+        "description": "Equipment repairs",
+        "amount": 8553.1
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2022-02-25T01:38:20",
+        "description": "Health insurance",
+        "amount": 9820.82
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2022-10-13T22:25:55",
+        "description": "Consulting fees",
+        "amount": 9007.22
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-05-19T07:27:38",
+        "description": "Online training course",
+        "amount": 965.94
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2022-04-30T03:14:10",
+        "description": "Corporate taxes",
+        "amount": 3457.04
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2022-08-26T05:53:25",
+        "description": "Miscellaneous office expenses",
+        "amount": 7874.03
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2022-02-18T06:43:18",
+        "description": "Flight tickets",
+        "amount": 146.63
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2022-11-14T04:03:54",
+        "description": "Office chairs",
+        "amount": 2456.37
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-12-29T08:15:48",
+        "description": "Employee salaries",
+        "amount": 6838.47
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-01-02T17:56:31",
+        "description": "Electricity bill",
+        "amount": 1233.91
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-09-03T01:33:24",
+        "description": "Online advertising",
+        "amount": 362.03
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2022-07-18T03:58:56",
+        "description": "Team building event",
+        "amount": 908.6
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2023-05-02T16:36:00",
+        "description": "Equipment repairs",
+        "amount": 6025.39
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2022-04-15T09:45:16",
+        "description": "Health insurance",
+        "amount": 4239.63
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-12-30T00:00:25",
+        "description": "Consulting fees",
+        "amount": 2069.42
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-08-31T08:50:42",
+        "description": "Online training course",
+        "amount": 8345.56
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2023-03-02T22:48:13",
+        "description": "Corporate taxes",
+        "amount": 8922.7
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2022-03-03T20:53:55",
+        "description": "Miscellaneous office expenses",
+        "amount": 7436.56
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-01-11T04:45:23",
+        "description": "Flight tickets",
+        "amount": 7797.01
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-06-04T03:35:11",
+        "description": "Office chairs",
+        "amount": 6968.18
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-05-11T20:09:05",
+        "description": "Employee salaries",
+        "amount": 9611.79
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-06-05T02:42:06",
+        "description": "Electricity bill",
+        "amount": 4097.83
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-07-19T22:24:15",
+        "description": "Online advertising",
+        "amount": 5289.7
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2022-11-19T02:43:02",
+        "description": "Team building event",
+        "amount": 3824.34
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-01-31T02:21:44",
+        "description": "Equipment repairs",
+        "amount": 3133.83
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-05-30T21:53:41",
+        "description": "Health insurance",
+        "amount": 2276.63
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-05-25T04:02:11",
+        "description": "Consulting fees",
+        "amount": 7257.89
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2023-07-07T09:40:26",
+        "description": "Online training course",
+        "amount": 9932.84
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2023-01-02T16:20:58",
+        "description": "Corporate taxes",
+        "amount": 6824.48
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2022-12-22T15:18:34",
+        "description": "Miscellaneous office expenses",
+        "amount": 1309.74
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-06-10T11:22:15",
+        "description": "Flight tickets",
+        "amount": 2725.65
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-11-08T11:39:35",
+        "description": "Office chairs",
+        "amount": 9257.39
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-08-13T08:03:51",
+        "description": "Employee salaries",
+        "amount": 233.61
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-09-15T07:17:42",
+        "description": "Electricity bill",
+        "amount": 4753.33
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-10-27T15:21:03",
+        "description": "Online advertising",
+        "amount": 9315.05
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-10-04T21:37:57",
+        "description": "Team building event",
+        "amount": 7209.99
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-11-29T08:19:10",
+        "description": "Equipment repairs",
+        "amount": 6481.4
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-07-26T12:38:52",
+        "description": "Health insurance",
+        "amount": 4395.69
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2022-04-14T03:54:57",
+        "description": "Consulting fees",
+        "amount": 6747.95
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-05-20T23:21:12",
+        "description": "Online training course",
+        "amount": 164.15
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2022-06-19T18:31:02",
+        "description": "Corporate taxes",
+        "amount": 2013.85
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2022-05-20T21:38:05",
+        "description": "Miscellaneous office expenses",
+        "amount": 910.67
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-07-07T04:21:34",
+        "description": "Flight tickets",
+        "amount": 2736.01
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-04-06T04:32:25",
+        "description": "Office chairs",
+        "amount": 291.07
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-09-04T18:20:49",
+        "description": "Employee salaries",
+        "amount": 7777.03
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2022-09-29T17:30:13",
+        "description": "Electricity bill",
+        "amount": 4340.71
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-11-21T18:32:08",
+        "description": "Online advertising",
+        "amount": 5301.47
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-10-24T05:48:58",
+        "description": "Team building event",
+        "amount": 3036.83
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2023-08-15T21:49:29",
+        "description": "Equipment repairs",
+        "amount": 4442.65
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2022-02-01T05:50:46",
+        "description": "Health insurance",
+        "amount": 5162.59
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2022-05-10T08:18:19",
+        "description": "Consulting fees",
+        "amount": 7978.98
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2023-12-03T21:13:50",
+        "description": "Online training course",
+        "amount": 461.01
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2023-02-11T15:53:53",
+        "description": "Corporate taxes",
+        "amount": 1203.65
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2023-03-22T18:29:34",
+        "description": "Miscellaneous office expenses",
+        "amount": 4758.48
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2022-10-28T22:16:40",
+        "description": "Flight tickets",
+        "amount": 394.99
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2022-12-14T08:47:18",
+        "description": "Office chairs",
+        "amount": 8240.11
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2022-05-05T09:09:32",
+        "description": "Employee salaries",
+        "amount": 452.25
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-08-29T15:21:57",
+        "description": "Electricity bill",
+        "amount": 7404.12
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2023-09-08T20:11:55",
+        "description": "Online advertising",
+        "amount": 6934.09
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2022-03-07T16:39:36",
+        "description": "Team building event",
+        "amount": 1866.14
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-02-08T01:05:00",
+        "description": "Equipment repairs",
+        "amount": 5427.62
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-07-08T22:30:33",
+        "description": "Health insurance",
+        "amount": 508.64
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2022-03-25T04:51:49",
+        "description": "Consulting fees",
+        "amount": 9199.31
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-07-18T20:08:44",
+        "description": "Online training course",
+        "amount": 3414.55
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2023-06-25T14:32:15",
+        "description": "Corporate taxes",
+        "amount": 1288.07
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2023-04-06T09:29:00",
+        "description": "Miscellaneous office expenses",
+        "amount": 403.02
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2022-10-28T18:07:20",
+        "description": "Flight tickets",
+        "amount": 9971.07
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2022-11-14T05:01:53",
+        "description": "Office chairs",
+        "amount": 2146.48
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-10-14T15:28:35",
+        "description": "Employee salaries",
+        "amount": 1992.55
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-11-19T20:18:47",
+        "description": "Electricity bill",
+        "amount": 6176.74
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-11-16T21:37:06",
+        "description": "Online advertising",
+        "amount": 8983.82
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-07-13T00:38:47",
+        "description": "Team building event",
+        "amount": 1476.26
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-12-25T17:49:23",
+        "description": "Equipment repairs",
+        "amount": 6423.85
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2022-01-29T11:36:20",
+        "description": "Health insurance",
+        "amount": 8658.4
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-04-28T10:39:41",
+        "description": "Consulting fees",
+        "amount": 533.22
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-10-02T10:17:15",
+        "description": "Online training course",
+        "amount": 6137.04
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2023-09-20T18:44:44",
+        "description": "Corporate taxes",
+        "amount": 7261.38
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2023-07-07T02:02:34",
+        "description": "Miscellaneous office expenses",
+        "amount": 133.96
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-03-30T00:09:15",
+        "description": "Flight tickets",
+        "amount": 9778.34
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2022-09-19T13:48:18",
+        "description": "Office chairs",
+        "amount": 9112.71
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-08-21T14:35:33",
+        "description": "Employee salaries",
+        "amount": 6215.71
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-12-27T15:51:09",
+        "description": "Electricity bill",
+        "amount": 3288.2
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-06-21T16:31:11",
+        "description": "Online advertising",
+        "amount": 4850.94
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2022-09-27T08:02:07",
+        "description": "Team building event",
+        "amount": 331.98
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-04-23T07:17:08",
+        "description": "Equipment repairs",
+        "amount": 3857.94
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-05-19T20:31:04",
+        "description": "Health insurance",
+        "amount": 9597.3
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2022-12-14T14:51:19",
+        "description": "Consulting fees",
+        "amount": 5262.93
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2023-03-20T14:58:47",
+        "description": "Online training course",
+        "amount": 8267.68
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2022-01-20T10:48:36",
+        "description": "Corporate taxes",
+        "amount": 5221.04
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2023-06-27T21:45:19",
+        "description": "Miscellaneous office expenses",
+        "amount": 1567.04
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-04-01T07:39:26",
+        "description": "Flight tickets",
+        "amount": 6797.47
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2022-07-28T14:28:03",
+        "description": "Office chairs",
+        "amount": 1383.94
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2022-10-15T09:17:18",
+        "description": "Employee salaries",
+        "amount": 3488.69
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-05-18T06:57:58",
+        "description": "Electricity bill",
+        "amount": 9489.26
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2023-12-22T05:19:09",
+        "description": "Online advertising",
+        "amount": 1818.37
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-10-20T05:46:37",
+        "description": "Team building event",
+        "amount": 6777.72
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-07-23T11:34:27",
+        "description": "Equipment repairs",
+        "amount": 9946.02
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-09-01T11:45:37",
+        "description": "Health insurance",
+        "amount": 1206.66
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-02-28T23:08:30",
+        "description": "Consulting fees",
+        "amount": 9160.77
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2023-07-18T13:24:18",
+        "description": "Online training course",
+        "amount": 8257.53
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2023-11-29T01:48:35",
+        "description": "Corporate taxes",
+        "amount": 203.61
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2022-10-04T06:41:12",
+        "description": "Miscellaneous office expenses",
+        "amount": 8710.86
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2022-01-12T16:12:43",
+        "description": "Flight tickets",
+        "amount": 7632.84
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-10-07T04:13:37",
+        "description": "Office chairs",
+        "amount": 6746.55
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2022-08-19T20:46:24",
+        "description": "Employee salaries",
+        "amount": 9854.42
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-10-05T19:53:24",
+        "description": "Electricity bill",
+        "amount": 3803.58
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-10-12T12:37:44",
+        "description": "Online advertising",
+        "amount": 7560.53
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-12-23T08:35:55",
+        "description": "Team building event",
+        "amount": 8146.12
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2023-06-09T21:14:22",
+        "description": "Equipment repairs",
+        "amount": 3882.75
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-01-11T05:23:51",
+        "description": "Health insurance",
+        "amount": 6443.44
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-08-17T23:07:26",
+        "description": "Consulting fees",
+        "amount": 2799.13
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-09-15T13:03:55",
+        "description": "Online training course",
+        "amount": 9238.63
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2022-09-06T15:21:46",
+        "description": "Corporate taxes",
+        "amount": 4703.85
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2023-01-09T12:23:15",
+        "description": "Miscellaneous office expenses",
+        "amount": 6708.9
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2023-03-08T02:57:20",
+        "description": "Flight tickets",
+        "amount": 3522.5
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-04-06T23:29:36",
+        "description": "Office chairs",
+        "amount": 4798.61
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-11-17T15:50:58",
+        "description": "Employee salaries",
+        "amount": 1807.13
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-04-18T05:08:02",
+        "description": "Electricity bill",
+        "amount": 2167.06
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-07-21T00:52:48",
+        "description": "Online advertising",
+        "amount": 2402.31
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2022-07-08T13:45:50",
+        "description": "Team building event",
+        "amount": 5371.84
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-10-29T08:40:37",
+        "description": "Equipment repairs",
+        "amount": 8799.35
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2022-10-04T06:03:45",
+        "description": "Health insurance",
+        "amount": 4679.62
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-12-02T14:41:06",
+        "description": "Consulting fees",
+        "amount": 9910.12
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2023-01-16T19:34:37",
+        "description": "Online training course",
+        "amount": 6902.4
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2023-07-14T20:21:44",
+        "description": "Corporate taxes",
+        "amount": 4784.4
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2023-08-30T08:40:11",
+        "description": "Miscellaneous office expenses",
+        "amount": 8337.96
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2022-01-12T13:57:19",
+        "description": "Flight tickets",
+        "amount": 6337.71
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-07-28T21:36:52",
+        "description": "Office chairs",
+        "amount": 2045.02
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2022-06-22T16:27:51",
+        "description": "Employee salaries",
+        "amount": 5951.11
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2022-06-29T10:11:50",
+        "description": "Electricity bill",
+        "amount": 7707.07
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-09-19T17:29:31",
+        "description": "Online advertising",
+        "amount": 8751.79
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-11-08T11:54:49",
+        "description": "Team building event",
+        "amount": 4574.85
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-06-15T15:43:11",
+        "description": "Equipment repairs",
+        "amount": 9062.75
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2022-07-21T19:09:56",
+        "description": "Health insurance",
+        "amount": 1955.41
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-06-10T18:58:28",
+        "description": "Consulting fees",
+        "amount": 624.16
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2023-11-23T19:55:31",
+        "description": "Online training course",
+        "amount": 5949.1
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2022-08-14T18:43:39",
+        "description": "Corporate taxes",
+        "amount": 7880.03
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2023-12-23T22:32:16",
+        "description": "Miscellaneous office expenses",
+        "amount": 7567.78
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2022-01-04T19:45:29",
+        "description": "Flight tickets",
+        "amount": 6975.66
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-11-05T23:12:04",
+        "description": "Office chairs",
+        "amount": 3456.84
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2022-04-16T11:15:31",
+        "description": "Employee salaries",
+        "amount": 2991.88
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-04-12T09:25:46",
+        "description": "Electricity bill",
+        "amount": 4069.51
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2023-10-30T10:14:45",
+        "description": "Online advertising",
+        "amount": 1150.95
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-01-05T11:44:14",
+        "description": "Team building event",
+        "amount": 4426.62
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2023-07-18T15:59:04",
+        "description": "Equipment repairs",
+        "amount": 291.34
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-06-14T07:01:26",
+        "description": "Health insurance",
+        "amount": 3832.67
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2022-03-05T20:57:44",
+        "description": "Consulting fees",
+        "amount": 5670.37
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-07-20T17:36:40",
+        "description": "Online training course",
+        "amount": 4237.06
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2022-10-23T16:22:37",
+        "description": "Corporate taxes",
+        "amount": 5371.72
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2022-10-22T14:45:51",
+        "description": "Miscellaneous office expenses",
+        "amount": 6910.25
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2022-09-27T18:06:56",
+        "description": "Flight tickets",
+        "amount": 3213.19
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2022-04-30T06:47:31",
+        "description": "Office chairs",
+        "amount": 449.5
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-01-07T05:50:27",
+        "description": "Employee salaries",
+        "amount": 5601.01
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-12-05T15:56:30",
+        "description": "Electricity bill",
+        "amount": 8049.53
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2023-10-09T23:21:52",
+        "description": "Online advertising",
+        "amount": 1075.92
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-10-20T13:09:43",
+        "description": "Team building event",
+        "amount": 2639.39
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2023-01-12T17:04:18",
+        "description": "Equipment repairs",
+        "amount": 2610.8
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2022-08-31T16:25:08",
+        "description": "Health insurance",
+        "amount": 1308.05
+    },
+    {
+        "category": "LEGAL_FEES",
+        "expense_creation_timestamp": "2023-11-26T12:41:01",
+        "description": "Consulting fees",
+        "amount": 9490.09
+    },
+    {
+        "category": "TRAINING",
+        "expense_creation_timestamp": "2022-07-26T22:45:55",
+        "description": "Online training course",
+        "amount": 1052.59
+    },
+    {
+        "category": "TAXES",
+        "expense_creation_timestamp": "2023-03-31T16:24:16",
+        "description": "Corporate taxes",
+        "amount": 248.5
+    },
+    {
+        "category": "MISCELLANEOUS",
+        "expense_creation_timestamp": "2022-11-21T23:18:09",
+        "description": "Miscellaneous office expenses",
+        "amount": 1907.96
+    },
+    {
+        "category": "TRAVEL",
+        "expense_creation_timestamp": "2022-07-25T18:55:53",
+        "description": "Flight tickets",
+        "amount": 3255.22
+    },
+    {
+        "category": "OFFICE_SUPPLIES",
+        "expense_creation_timestamp": "2023-10-24T16:25:01",
+        "description": "Office chairs",
+        "amount": 9359.01
+    },
+    {
+        "category": "SALARIES",
+        "expense_creation_timestamp": "2023-03-16T12:09:03",
+        "description": "Employee salaries",
+        "amount": 384.71
+    },
+    {
+        "category": "UTILITIES",
+        "expense_creation_timestamp": "2023-11-01T09:09:15",
+        "description": "Electricity bill",
+        "amount": 6578.26
+    },
+    {
+        "category": "MARKETING",
+        "expense_creation_timestamp": "2022-05-17T10:38:23",
+        "description": "Online advertising",
+        "amount": 9896.86
+    },
+    {
+        "category": "ENTERTAINMENT",
+        "expense_creation_timestamp": "2023-08-07T13:35:46",
+        "description": "Team building event",
+        "amount": 6358.52
+    },
+    {
+        "category": "MAINTENANCE",
+        "expense_creation_timestamp": "2022-07-27T13:47:08",
+        "description": "Equipment repairs",
+        "amount": 5575.02
+    },
+    {
+        "category": "INSURANCE",
+        "expense_creation_timestamp": "2023-02-09T22:11:20",
+        "description": "Health insurance",
+        "amount": 7701.38
+    }
+]

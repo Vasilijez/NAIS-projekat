@@ -1,0 +1,702 @@
+[
+    {
+        "dateTimeStarted": "2023-09-10T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "3-2",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-09-28T21:00:00",
+        "opponentName": "Team C",
+        "location": "Arena B",
+        "score": "3-2",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-03-17T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Z",
+        "score": "1-1",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2021-11-01T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium X",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2021-11-27T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Z",
+        "score": "3-2",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-11-18T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Z",
+        "score": "1-1",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-04-28T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Y",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-12-21T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena A",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2021-12-02T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena B",
+        "score": "1-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-08-25T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium Y",
+        "score": "1-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-04-23T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Y",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-09-18T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium X",
+        "score": "3-2",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-06-10T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Y",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-09-02T21:00:00",
+        "opponentName": "Team E",
+        "location": "Arena A",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-11-18T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium X",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-05-13T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium X",
+        "score": "2-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-03-09T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Z",
+        "score": "1-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2021-07-23T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium X",
+        "score": "1-1",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2021-06-11T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Y",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-09-11T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Y",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-05-19T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena B",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-01-04T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Y",
+        "score": "2-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-08-28T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium X",
+        "score": "2-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-08-23T21:00:00",
+        "opponentName": "Team C",
+        "location": "Arena A",
+        "score": "1-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-08-22T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium X",
+        "score": "3-2",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2021-05-16T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium X",
+        "score": "3-2",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-07-27T21:00:00",
+        "opponentName": "Team B",
+        "location": "Arena A",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-04-03T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Y",
+        "score": "1-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-11-26T21:00:00",
+        "opponentName": "Team C",
+        "location": "Arena B",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2022-08-08T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Y",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-04-09T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Y",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-12-20T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Z",
+        "score": "1-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-02-06T21:00:00",
+        "opponentName": "Team B",
+        "location": "Arena A",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-10-01T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Y",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-01-08T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-08-12T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Y",
+        "score": "1-1",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-12-16T21:00:00",
+        "opponentName": "Team E",
+        "location": "Arena B",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2021-11-24T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Y",
+        "score": "3-2",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-06-12T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena A",
+        "score": "1-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-08-14T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena A",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-02-18T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Z",
+        "score": "1-1",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-10-19T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena A",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-03-06T21:00:00",
+        "opponentName": "Team B",
+        "location": "Arena B",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2021-02-24T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium Z",
+        "score": "0-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2022-01-23T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Z",
+        "score": "1-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2021-02-24T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Z",
+        "score": "3-2",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-02-19T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Z",
+        "score": "2-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-04-18T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium X",
+        "score": "3-2",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-08-25T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Z",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2021-09-09T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Y",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-10-05T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-09-16T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena B",
+        "score": "1-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-05-24T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena A",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-04-04T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Z",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-10-26T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Z",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-09-24T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena A",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-06-26T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Z",
+        "score": "0-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2022-01-12T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Y",
+        "score": "1-1",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2021-10-24T21:00:00",
+        "opponentName": "Team C",
+        "location": "Arena B",
+        "score": "3-2",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-09-15T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium X",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-11-06T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium X",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-07-11T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Y",
+        "score": "1-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2021-04-04T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena B",
+        "score": "1-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-08-06T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium X",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-02-05T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium X",
+        "score": "0-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-01-26T21:00:00",
+        "opponentName": "Team E",
+        "location": "Arena B",
+        "score": "2-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-10-15T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium Z",
+        "score": "1-1",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2021-05-21T21:00:00",
+        "opponentName": "Team C",
+        "location": "Arena A",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-05-09T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium X",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-12-23T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Z",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-03-03T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Z",
+        "score": "1-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-01-17T21:00:00",
+        "opponentName": "Team E",
+        "location": "Arena B",
+        "score": "3-2",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-01-21T21:00:00",
+        "opponentName": "Team E",
+        "location": "Arena B",
+        "score": "3-2",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-02-24T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Y",
+        "score": "1-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-04-01T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2021-12-20T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium Y",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-08-26T21:00:00",
+        "opponentName": "Team E",
+        "location": "Arena A",
+        "score": "0-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-11-06T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-12-26T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2022-12-01T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Y",
+        "score": "0-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2022-08-07T21:00:00",
+        "opponentName": "Team D",
+        "location": "Arena B",
+        "score": "1-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-05-01T21:00:00",
+        "opponentName": "Team A",
+        "location": "Arena A",
+        "score": "1-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-08-16T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2023-04-17T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "3-2",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-05-17T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Z",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-12-09T21:00:00",
+        "opponentName": "Team B",
+        "location": "Arena B",
+        "score": "0-0",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2022-06-25T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Y",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-01-02T21:00:00",
+        "opponentName": "Team B",
+        "location": "Stadium Z",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-03-28T21:00:00",
+        "opponentName": "Team D",
+        "location": "Arena B",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-02-16T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium X",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-07-12T21:00:00",
+        "opponentName": "Team B",
+        "location": "Arena B",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2022-05-27T21:00:00",
+        "opponentName": "Team C",
+        "location": "Stadium Y",
+        "score": "2-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2022-10-08T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Y",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-05-23T21:00:00",
+        "opponentName": "Team E",
+        "location": "Stadium Y",
+        "score": "1-1",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2022-03-11T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Y",
+        "score": "2-1",
+        "type": "CUP"
+    },
+    {
+        "dateTimeStarted": "2023-12-05T21:00:00",
+        "opponentName": "Team A",
+        "location": "Stadium Z",
+        "score": "1-1",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-09-12T21:00:00",
+        "opponentName": "Team E",
+        "location": "Arena A",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2021-02-04T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "1-0",
+        "type": "LEAGUE"
+    },
+    {
+        "dateTimeStarted": "2021-02-07T21:00:00",
+        "opponentName": "Team D",
+        "location": "Stadium X",
+        "score": "1-0",
+        "type": "FRIENDLY"
+    },
+    {
+        "dateTimeStarted": "2023-03-20T21:00:00",
+        "opponentName": "Team C",
+        "location": "Arena B",
+        "score": "2-1",
+        "type": "LEAGUE"
+    }
+]
