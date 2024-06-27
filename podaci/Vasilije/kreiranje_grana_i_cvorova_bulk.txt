@@ -1,0 +1,25 @@
+
+// Bulk kreiranje cvorova
+CREATE	(lp1:LoyaltyProgram {Level: "Level_1", DiscountRate: "0.3"}),
+		(lp2:LoyaltyProgram {Level: "Level_2", DiscountRate: "0.2"}),
+		(lp3:LoyaltyProgram {Level: "Level_3", DiscountRate: "0.1"}),
+		(f1:Fan {Username: "Petarm", FanType: "Student", FavouritePlayer: "Ronaldo", DateOfBirth: date("2001-05-05"), Gender: "Male"}),
+		(f2:Fan {Username: "DraganEra", FanType: "Student", FavouritePlayer: "Nejmar", DateOfBirth: date("2001-08-08"), Gender: "Male"}),
+		(o1:Order {OrderID: 'O1', TotalPrice: 10, CreationDate: date("2010-05-09"), DeliveryType: "Email", Status: "Reserved", PaymentMethod: "PaymentSlip"}),
+		(o2:Order {OrderID: 'O2', TotalPrice: 15, CreationDate: date("2015-05-09"), DeliveryType: "TicketOffice", Status: "Reserved", PaymentMethod: "Cash"}),
+		(t1:Ticket {TicketID: 'T1', Status: "Reserved", Price: 100}),
+		(st1:Ticket:SeasonTicket {TicketId: 'T2', Status: "Reserved", Price: 100, StartTime: date('2023-01-01'), EndTime: date('2024-01-01')}),
+		(fm1: FootballMatch {FootballMatchID: 'FM1', StartTime: datetime('2024-04-04T00:00:00'), OpponentName: "FK Partizan", Result: "1-1"}),
+		(s1:Seat {SeatNumber: 'SN1', Sector: 1, Tribune: "East"}),
+		(sr1:SeatReservation {FootballMatchID: 'FM1', SeatNumber: 'SN1'})
+		
+		
+// Bulk kreiranje grana
+MATCH (f1:Fan {Username: 'Petarm'}), (o1:Order {OrderID: 'O1'}), (o2:Order {OrderID: 'O1'}), (t1:Ticket {TicketID: 'T1'}), (t1:Ticket {TicketID: 'T1'}), (sr1:SeatReservation {FootballMatchID: 'FM1', SeatNumber: 'SN1'}), (fm1:FootballMatch {FootballMatchID: 'FM1'}), (sr1:SeatReservation {FootballMatchID: 'FM1', SeatNumber: 'SN1'}), (s1:Seat {SeatNumber: 'SN1'}), (sr1:SeatReservation {FootballMatchID: 'FM1', SeatNumber: 'SN1'}), (f1:Fan {Username: 'Petarm'}), (lp1:LoyaltyProgram {Level: 'Level_3'}), (f1:Fan {Username: 'Petarm'}), (lp1:LoyaltyProgram {Level: 'Level_3'})
+CREATE  (f1)-[:CREATES_ORDER]->(o1),
+        (o2)-[:CONSISTS_OF]->(t1),
+		(t1)-[:VALID_FOR]->(sr1),
+		(fm1)-[:HAS_RESERVATION]->(sr1),
+		(s1)-[:BOOKED_FOR]->(sr1),
+		(f1)-[:MEMBER_OF]->(lp1),
+		(f1)-[:MEMBER_OF {pointsNumber: 40}]->(lp1)

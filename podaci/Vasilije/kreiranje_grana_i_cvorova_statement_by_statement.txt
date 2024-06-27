@@ -1,0 +1,684 @@
+// Cvorovi
+// Promeniti raspored atributa kako bi bilo preglednije u Neo4j-u
+
+
+// LoyaltyProgram
+
+// Create
+CREATE (lp1:LoyaltyProgram {level: "Level_5", discountRate: "0.3"})
+RETURN lp1
+
+// Get
+MATCH (n:LoyaltyProgram {level: "Level_1"}) 
+RETURN n
+
+// Update
+MATCH (n:LoyaltyProgram {level: "Level_1"})
+SET n.level = "Level_4", n.discountRate = 0.4
+RETURN n
+
+// Delete
+MATCH (n:LoyaltyProgram {level: "Level_2"}) 
+DETACH DELETE n
+RETURN count(n) > 0
+
+
+
+// Order
+
+// Create
+CREATE (o:Order {orderID: 'O66', totalPrice: 10, creationDate: "2010-05-09", deliveryType: "Email", status: "Reserved", paymentMethod: "PaymentSlip", username: "Vasilijez"})
+RETURN o
+
+// Get
+MATCH (o:Order {orderID: "O66"}) 
+RETURN o
+
+// Update
+MATCH (o:Order {orderID: "O66"}) 
+SET o.orderID = 'O66', o.totalPrice = 150, o.creationDate = "2010-05-09", o.deliveryType = 'Email', o.status = "Reserved", o.paymentMethod = "PaymentSlip", o.username = 'Vasilijez'
+RETURN o
+
+// Delete
+MATCH (o:Order {orderID: "O66"}) 
+DETACH DELETE o
+RETURN count(o) > 0
+
+
+
+// Fan
+
+// Create
+CREATE (f:Fan {username: "Petarm", fanType: "Student", favouritePlayer: "Ronaldo", dateOfBirth: "2001-05-05", gender: "Male", level: "Level_3"})
+RETURN f
+
+// Get
+MATCH (f:Fan {username: "Petarm"}) 
+RETURN f
+
+// Update
+MATCH (f:Fan {username: "Petarm"}) 
+SET f.username = "Petarm", f.fanType = "Student", f.favouritePlayer = "Ronaldo", f.dateOfBirth = "2001-05-05", f.gender = "Male", f.level = "Level_3"
+RETURN f
+
+// Delete
+MATCH (f:Fan {username: "Petarm"}) 
+DETACH DELETE f
+RETURN count(f) > 0
+
+
+
+// Ticket
+
+// Create
+CREATE (t:Ticket {ticketID: 'T100', price: 100, orderID: "O66"})
+RETURN t
+
+// Get
+MATCH (t:Ticket {ticketID: 'T100'})
+RETURN t
+
+// Update
+MATCH (t:Ticket {ticketID: 'T100'})
+SET t.ticketID = "T100", t.price = 100, t.orderID = "O66"
+RETURN t
+
+// Delete
+MATCH (t:Ticket {ticketID: 'T100'})
+DETACH DELETE t
+RETURN count(t) > 0
+
+
+
+// SeasonTicket
+
+// Create
+CREATE (t:Ticket:SeasonTicket {ticketID: 'T100', price: 100, startTime: "2023-01-01", endTime: "2024-01-01", orderID: "O66"})
+RETURN t
+
+// Get
+MATCH (t:Ticket:SeasonTicket {ticketID: 'T100'})
+RETURN t
+
+// Update
+MATCH (t:Ticket:SeasonTicket {ticketID: 'T100'})
+SET t.ticketID = "T100", t.price = 100, t.startTime = "2023-01-01", t.endTime = "2023-01-01", t.orderID = "O66"
+RETURN t
+
+// Delete
+MATCH (t:Ticket:SeasonTicket {ticketID: 'T100'})
+DETACH DELETE t
+RETURN count(t) > 0
+
+
+
+// FootballMatch
+
+// Create
+CREATE (fm: FootballMatch {footballMatchID: 'FM100', startTime: localDateTime("2024-04-04T21:00:00"), opponentName: "FK Dubocica", result: "1-1"})
+RETURN fm
+// Novi Create [zbog Pavla]
+OPTIONAL MATCH (fm:FootballMatch)
+WHERE (fm.startTime = localDateTime("2024-04-04T21:00:00") and fm.opponentName = "FK Dubocica") or fm.footballMatchID = "FM100"
+WITH fm
+WHERE fm IS NULL
+CREATE (newFm: FootballMatch {footballMatchID: 'FM100', startTime: localDateTime("2024-04-04T21:00:00"), opponentName: "FK Dubocica", result: "1-1"})
+RETURN count(newFm) >= 1 as isCreated
+
+
+// Get
+MATCH (fm: FootballMatch {footballMatchID: 'FM100'})
+RETURN fm
+
+// Update
+MATCH (fm: FootballMatch {footballMatchID: 'FM100'})
+SET fm.footballMatchID = 'FM100', fm.startTime = localDateTime("2024-04-04T21:00:00"), fm.opponentName = "FK Dubocica", fm.result = "1-1"
+RETURN fm
+
+// Delete
+MATCH (fm: FootballMatch {footballMatchID: 'FM100'})
+DETACH DELETE fm
+RETURN count(fm) > 0
+
+
+
+// Seat
+
+// Create
+CREATE (s:Seat {seatNumber: 'SN30', sector: 2, tribune: "East"})
+RETURN s
+
+// Get
+MATCH (s:Seat {seatNumber: 'SN30'})
+RETURN s
+
+// Update
+MATCH (s:Seat {seatNumber: 'SN30'})
+SET s.seatNumber = 'SN30', s.sector = 2, s.tribune = "East"
+RETURN s
+
+// Delete
+MATCH (s:Seat {seatNumber: 'SN30'})
+DETACH DELETE s
+RETURN count(s) > 0
+
+
+
+// SeatReservation
+
+// Create
+CREATE (sr:SeatReservation {footballMatchID: 'FM100', seatNumber: 'SN30'})
+RETURN sr
+
+// Get
+MATCH (sr:SeatReservation {footballMatchID: 'FM100', seatNumber: 'SN30'})
+RETURN sr
+
+// Update
+MATCH (sr:SeatReservation {footballMatchID: 'FM100', seatNumber: 'SN30'})
+SET sr.footballMatchID = 'FM100', sr.seatNumber = 'SN30'
+RETURN sr
+
+// Delete
+MATCH (sr:SeatReservation {footballMatchID: 'FM100', seatNumber: 'SN30'})
+DETACH DELETE sr
+RETURN count(sr) > 0
+
+
+
+// Grane
+
+
+
+// CREATES_ORDER
+
+// Create
+MATCH (f:Fan {username: 'Petarm'}), (o:Order {orderID: 'O1'})
+CREATE (f)-[r:CREATES_ORDER]->(o)
+RETURN count(r) > 0
+
+// Get
+MATCH (:Fan {username: 'Vasilijez'})-[r:CREATES_ORDER]->(o:Order)
+RETURN o
+
+
+// Update
+DELETE + CREATE
+
+
+// Delete
+MATCH (f:Fan {username: 'Peraa'})-[r:CREATES_ORDER]->(o:Order {orderID: 'O1'})
+DELETE r
+RETURN count(r) > 0
+
+
+
+// MEMBER_OF
+
+// Create
+MATCH (lp:LoyaltyProgram {level: "Level_3"}), (f:Fan {username: "Peraa"})
+CREATE (f)-[r:MEMBER_OF {pointsNumber: f.pointsNumber}]->(lp)
+RETURN count(r) > 0
+
+// Update
+DELETE + CREATE
+
+// Get
+MATCH (:Fan {username: 'Peraa'})-[r:MEMBER_OF]->(lp:LoyaltyProgram)
+RETURN lp
+
+
+// Delete
+MATCH (f:Fan {username: 'Vasilijez'})-[r:MEMBER_OF]->(lp:LoyaltyProgram {level: "Level_2"})
+DELETE r
+RETURN count(r) > 0
+
+
+
+MATCH (o:Order {orderID: '01'}), (t:Ticket {ticketID: 'T1'})
+CREATE (o)-[:CONSISTS_OF]->(t)
+
+
+MATCH (fm:FootballMatch {footballMatchID: 'FM1'}), (sr:SeatReservation {footballMatchID: 'FM1', seatNumber: 'SN1'})
+CREATE (fm)-[:HAS_RESERVATION]->(sr)
+
+MATCH (s:Seat {seatNumber: 'SN1'}), (sr:SeatReservation {footballMatchID: 'FM1', seatNumber: 'SN1'})
+CREATE (s)-[:BOOKED_FOR]->(sr)
+
+MATCH (f:Fan {username: 'Petarm'}), (lp:LoyaltyProgram {level: 'Level_3'})
+CREATE (f)-[:MEMBER_OF]->(lp)
+
+MATCH (f:Fan {username: 'Petarm'}), (lp:LoyaltyProgram {level: 'Level_3'})
+CREATE (f)-[:MEMBER_OF {pointsNumber: 40}]->(lp)
+
+MATCH (t:Ticket {ticketID: 'T1'}), (sr:SeatReservation {footballMatchID: 'FM1', seatNumber: 'SN1'})
+CREATE (t)-[:VALID_FOR]->(sr)
+
+
+// Kompleksni upiti
+
+
+
+// Prosti upiti
+
+// 1.
+MATCH (f:Fan)-[:CREATES_ORDER]->(o:Order) 
+WHERE o.paymentMethod = "Cash" and f.fanType = "Student" and o.status = "Shipped" 
+RETURN o
+ORDER BY o.totalPrice DESC 
+LIMIT 3
+
+// 2.
+MATCH (f:Fan)-[r:MEMBER_OF]->(:LoyaltyProgram), (f)-[:CREATES_ORDER]->(o:Order)
+WHERE o.creationDate >= localDateTime("2024-01-01")
+RETURN DISTINCT f, r.pointsNumber as pointsNumber
+ORDER BY r.pointsNumber ASC
+
+
+// Slozeni upiti
+
+// 1.
+MATCH (fm:FootballMatch)
+WITH fm
+ORDER BY localDateTime(fm.startTime) DESC
+LIMIT 5
+MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation) 
+WITH fm, COUNT(sr) AS reservedTicketsNumber
+
+OPTIONAL MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation), (sr)-[:VALID_FOR]->(t:Ticket), (t)<-[:CONSISTS_OF]-(o:Order) 
+WHERE o.status = "Cancelled"
+WITH fm, COUNT(t) AS cancelledTicketsNumber, reservedTicketsNumber
+RETURN fm AS footballMatch, reservedTicketsNumber, cancelledTicketsNumber, reservedTicketsNumber - cancelledTicketsNumber AS paidTicketsNumber
+ORDER BY paidTicketsNumber DESC
+
+// 2.
+MATCH (f:Fan)
+WHERE f.level = "Level_2" OR f.level = "Level_1"
+WITH f
+MATCH (f)-[:CREATES_ORDER]->(o:Order)
+WHERE o.status <> "Cancelled" AND o.status <> "InCart"
+WITH f, COUNT(o) AS ordersNumber
+WHERE ordersNumber >= 3
+MATCH (f)-[r:MEMBER_OF]->(:LoyaltyProgram)
+WITH r.pointsNumber AS oldPointsNumber, f, r, ordersNumber
+SET r.pointsNumber = r.pointsNumber + 10
+RETURN f AS fan, ordersNumber, oldPointsNumber, r.pointsNumber AS newPointsNumber
+
+// 3. Preporuka 1
+
+// poslednja verzija
+MATCH (rFan:Fan)
+WHERE rFan.username = "Vasilijez"
+WITH rFan
+MATCH (rFan)-[:CREATES_ORDER]->(o:Order)
+WHERE o.status <> "Cancelled" and o.status <> "InCart"
+WITH rFan, o
+MATCH (o)-[:CONSISTS_OF]->(t:Ticket)
+WHERE NOT EXISTS((o)-[:CONSISTS_OF]->(t:Ticket:SeasonTicket))
+WITH rFan, COUNT(t) as rFanStandardTicketsNumber
+
+MATCH (otherFans:Fan)
+WHERE otherFans.username <> rFan.username and otherFans.favouritePlayer = rFan.favouritePlayer and otherFans.fanType = rFan.fanType
+WITH otherFans, rFan, rFanStandardTicketsNumber
+MATCH (otherFans)-[:CREATES_ORDER]->(o:Order)
+WHERE o.status <> "Cancelled" and o.status <> "InCart"
+WITH otherFans, o, rFan, rFanStandardTicketsNumber
+MATCH (o)-[:CONSISTS_OF]->(t:Ticket)
+WHERE NOT EXISTS((o)-[:CONSISTS_OF]->(t:Ticket:SeasonTicket))
+WITH otherFans, COUNT(t) as otherFansStandardTicketsNumber, rFan, rFanStandardTicketsNumber
+WHERE rFanStandardTicketsNumber - 20 <= otherFansStandardTicketsNumber <= rFanStandardTicketsNumber + 20 AND rFan.dateOfBirth - duration({years: 5}) <= otherFans.dateOfBirth <= rFan.dateOfBirth + duration({years: 5})
+
+MATCH (otherFans)-[:CREATES_ORDER]->(o:Order)
+WHERE o.status <> "Cancelled" and o.status <> "InCart"
+MATCH (o)-[:CONSISTS_OF]->(t:Ticket)
+WHERE NOT EXISTS((o)-[:CONSISTS_OF]->(t:Ticket:SeasonTicket))
+MATCH (t)<-[:VALID_FOR]-(sr:SeatReservation), (sr)<-[:BOOKED_FOR]-(s:Seat)
+WITH s as seat, COUNT(sr) as seatReservationCount
+
+MATCH (fm:FootballMatch)
+WHERE fm.footballMatchID = 'FM1'
+OPTIONAL MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation), (sr)<-[:BOOKED_FOR]-(s)
+RETURN s, seatReservationCount, CASE WHEN sr IS NULL THEN 'NO' ELSE 'YES' END AS isReserved
+ORDER BY isReserved, seatReservationCount DESC
+
+// 4. Preporuka 2
+
+MATCH (rFan:Fan)-[r:MEMBER_OF]->(:LoyaltyProgram)
+WHERE rFan.username = "Peraa"
+WITH rFan, r.pointsNumber as rFanPointsNumber
+
+MATCH (otherFans:Fan)-[r:MEMBER_OF]->(:LoyaltyProgram)
+WHERE otherFans.username <> rFan.username and rFanPointsNumber - 50 <= r.pointsNumber <=rFanPointsNumber + 50 
+WITH rFan, otherFans
+
+MATCH (otherFans)-[:CREATES_ORDER]->(o:Order), (o)-[:CONSISTS_OF]->(t:Ticket)
+WHERE o.status <> "Cancelled" AND o.status <> "InCart" AND EXISTS((o)-[:CONSISTS_OF]->(t:Ticket:SeasonTicket))
+WITH otherFans
+
+MATCH (otherFans)-[:CREATES_ORDER]->(o:Order)
+WHERE o.status <> "Cancelled" and o.status <> "InCart"
+MATCH (o)-[:CONSISTS_OF]->(t:Ticket), (t)<-[:VALID_FOR]-(sr:SeatReservation), (sr)<-[:BOOKED_FOR]-(s:Seat)
+WITH s, COUNT(DISTINCT sr) AS seatReservationCountEver
+
+MATCH (fm:FootballMatch)
+// Datum koji se prosledjuje kao pocetni datum sezonske karte
+WHERE localDateTime("2024-06-04T00:00:00") <= fm.startTime <= localDateTime("2024-06-04T00:00:00") + duration({years: 1})
+OPTIONAL MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation), (sr)<-[:BOOKED_FOR]-(s)
+WITH s, COLLECT(sr) as reservations, seatReservationCountEver
+
+RETURN s as seat, CASE WHEN size(reservations) = 0 THEN 'NO' ELSE 'YES' END AS isReserved, seatReservationCountEver
+ORDER BY isReserved, seatReservationCountEver DESC
+
+// 5. Preporuka 3
+
+MATCH (fm:FootballMatch) 
+WHERE fm.startTime >= localDateTime()
+MATCH (fm)-[:HAS_RESERVATION]->(sr:SeatReservation)
+WITH fm, COUNT(sr) AS totalSeatReservationsNumber
+
+MATCH (rFan:Fan)
+WHERE rFan.username = "Vasilijez"
+WITH rFan, fm, totalSeatReservationsNumber
+
+MATCH (rFan)-[r:CREATES_ORDER]->(o:Order)
+WHERE o.status <> "Cancelled"
+WITH rFan,fm, o,r, totalSeatReservationsNumber
+
+OPTIONAL MATCH (o)-[:CONSISTS_OF]->(t:Ticket), (t)<-[:VALID_FOR]-(sr:SeatReservation), (sr)<-[:HAS_RESERVATION]-(fm2:FootballMatch)
+WHERE fm = fm2 
+WITH fm, COLLECT(sr) as reservations, totalSeatReservationsNumber 
+RETURN fm as footballMatch, totalSeatReservationsNumber, CASE WHEN size(reservations) = 0 THEN 'NO' ELSE 'YES' END AS hasTicket
+ORDER BY hasTicket, totalSeatReservationsNumber DESC
+
+
+// Kreiranje bulk importa na osnovu izgenerisanog .csv fajla
+
+LOAD CSV WITH HEADERS FROM 'file:///tickets_selling.csv' AS row
+CREATE (:Data {
+	level: row.level,
+	discountRate: toFloat(row.discountRate),
+	pointsNumber: toInteger(row.pointsNumber),
+	username: row.username,
+	fanType: row.fanType,
+	favouritePlayer: row.favouritePlayer,
+	dateOfBirth: date(row.dateOfBirth),
+	gender: row.gender,
+	orderID: row.orderID,
+	totalPrice: toFloat(row.totalPrice),
+	creationDate: date(row.creationDate),
+	deliveryType: row.deliveryType,
+	status: row.status,
+	paymentMethod: row.paymentMethod,
+	ticketID: row.ticketID,
+	price: toFloat(row.price),
+	ticketType: row.ticketType,
+	validFrom: date(row.validFrom),
+	validUntil: date(row.validUntil),
+	footballMatchID: row.footballMatchID,
+	startTime: datetime(row.startTime),
+	opponentName: row.opponentName,
+	result: row.result,
+	seatNumber: row.seatNumber,
+	sector: toInteger(row.sector),
+	tribune: row.tribune
+});
+
+
+// Kreiranje cvora loyalty programa
+MATCH (d:Data)
+MERGE (lp:LoyaltyProgram {level: d.level, discountRate: d.discountRate})
+ON CREATE SET d.level = lp.level;
+
+// Kreiranje cvora fana
+MATCH (d:Data)
+MERGE (f:Fan {username: d.username, fanType: d.fanType, favouritePlayer: d.favouritePlayer, dateOfBirth: d.dateOfBirth, gender: d.gender, level: d.level})
+ON CREATE SET d.username = f.username;
+
+// Kreiranje grane izmedju loyalty programa i fana sa poenima
+MATCH (lp:LoyaltyProgram), (f:Fan), (d:Data)
+WHERE lp.level = f.level and f.username = d.username
+WITH f, lp, COLLECT(d) as datas
+WITH f, lp, datas[0] as d
+CREATE (f)-[:MEMBER_OF {pointsNumber: d.pointsNumber}]->(lp);
+
+// Kreiranje cvora ordera
+MATCH (d:Data)
+MERGE (o:Order {orderID: d.orderID, totalPrice: d.totalPrice, creationDate: d.creationDate, deliveryType: d.deliveryType, status: d.status, paymentMethod: d.paymentMethod, username: d.username})
+ON CREATE SET d.orderID = o.orderID;
+
+// Kreiranje grane izmedju fana i ordera
+MATCH (f:Fan), (o:Order)
+WHERE f.username = o.username
+CREATE (f)-[:CREATES_ORDER]->(o);
+
+// Kreiranje cvora ticketa
+MATCH (d:Data)
+WHERE d.ticketType = 'Standard'
+MERGE (t:Ticket {ticketID: d.ticketID, price: toFloat(d.price), orderID: d.orderID});
+
+// Kreiranje cvora season ticketa
+MATCH (d:Data)
+WHERE d.ticketType = 'Season'
+MERGE (t:Ticket:SeasonTicket {ticketID: d.ticketID, price: toFloat(d.price), validFrom: d.validFrom, validUntil: d.validUntil, orderID: d.orderID});
+
+// Kreiranje grane izmedju standard ticketa i ordera
+MATCH (o:Order), (t:Ticket)
+WHERE o.orderID = t.orderID
+CREATE (o)-[:CONSISTS_OF]->(t);
+
+// Kreiranje cvora seat reservationa
+MATCH (d:Data)
+MERGE (sr:SeatReservation {footballMatchID: d.footballMatchID, seatNumber: d.seatNumber, ticketID: d.ticketID});
+
+// Kreiranje cvora football matcha
+MATCH (d:Data)
+MERGE (fm:FootballMatch {footballMatchID: d.footballMatchID, startTime: localDateTime(d.startTime), opponentName: d.opponentName, result: COALESCE(d.result, '')});
+
+// Kreiranje cvora seat
+MATCH (d:Data)
+MERGE (s:Seat {seatNumber: d.seatNumber, sector: toInteger(d.sector), tribune: d.tribune});
+
+// Kreiranje grane izmedju ticketa i seat reservationa
+MATCH (t:Ticket), (sr:SeatReservation)
+WHERE t.ticketID = sr.ticketID
+CREATE (sr)-[:VALID_FOR]->(t);
+
+// Kreiranje grane izmedju football matcha i seat reservationa
+MATCH (fm:FootballMatch), (sr:SeatReservation)
+WHERE fm.footballMatchID = sr.footballMatchID
+CREATE (fm)-[:HAS_RESERVATION]->(sr);
+
+// Kreiranje grane izmedju seata i seat reservationa
+MATCH (s:Seat), (sr:SeatReservation)
+WHERE s.seatNumber = sr.seatNumber
+CREATE (s)-[:BOOKED_FOR]->(sr);
+
+// Brisanje svih data cvorova, jer vise ne trebaju
+MATCH (n:Data) 
+DETACH DELETE (n);
+
+
+
+// Brisanje svih cvorova i grana
+MATCH n
+DETACH DELETE n
+
+// Prikaz svih cvorova i grana
+MATCH (n)
+RETURN n;
+
+
+
+// Komande za relacionu bazu podataka
+
+Kredencijali
+admin@example.com
+admin
+
+Registrovanje servera
+host: postgresdb
+maintenance database: postgres
+username: nais
+password: nais
+pgadmin: http://localhost:8080/
+nazivbaze: nais (to ne unosis)
+
+CREATE TABLE LoyaltyProgram (
+    level VARCHAR(255) PRIMARY KEY,
+    discountRate DOUBLE PRECISION
+);
+
+INSERT INTO public.loyaltyprogram (level, discountRate) VALUES ('Level_1', 0.3);
+INSERT INTO public.loyaltyprogram (level, discountRate) VALUES ('Level_2', 0.2);
+INSERT INTO public.loyaltyprogram (level, discountRate) VALUES ('Level_3', 0.1);
+
+SELECT * FROM public.loyaltyprogram;
+
+
+
+
+
+// Verzija docker compose fajla sa samo graf servisom
+
+version: '3.8'
+
+services:
+  eureka-server:
+    build:
+      context: ./EurekaService
+      dockerfile: Dockerfile
+    image: eureka-server:latest
+    ports:
+      - "8761:8761"
+
+
+  #  TODO: Eureka treba da ga prepozna ili ne?
+#  nats:
+#    image: 'nats:latest'
+#    expose:
+#      - "4222"
+#    ports:
+#      - "4222:4222"
+
+
+  neo4j:
+    image: neo4j
+    container_name: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/password
+    volumes:
+      - ./data:/data
+      #      Vasilije: trebace?
+      - ./import:/var/lib/neo4j/import
+
+#
+#  postgresdb:
+#    image: postgres:latest
+#    environment:
+#      POSTGRES_USER: "nais"
+#      POSTGRES_PASSWORD: "nais"
+#    volumes:
+#      - data:/var/lib/postgres
+
+
+#  relational-service:
+#    build:
+#      context: ./RelationalDatabaseService
+#      dockerfile: Dockerfile
+#    image: relational-service:latest
+#    depends_on:
+#      - postgresdb
+#      - eureka-server
+#    environment:
+#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+#      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgresdb:5432/nais"
+#      SPRING_DATASOURCE_USERNAME: nais
+#      SPRING_DATASOURCE_PASSWORD: nais
+#    ports:
+#      - "9030:9030"
+#
+#
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: admin@example.com
+#      PGADMIN_DEFAULT_PASSWORD: admin
+#    ports:
+#      - "8080:80"
+#    depends_on:
+#      - postgresdb
+#    volumes:
+#      - ./data:/data
+#      - ./csv:/var/lib/pgadmin/import
+
+
+  graph-service:
+    build:
+      context: ./GraphDatabaseService
+      dockerfile: Dockerfile
+    image: graph-spring-example:latest
+    depends_on:
+      - eureka-server
+      - neo4j
+#      - relational-service
+#      - nats
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+      SPRING_NEO4J_URI: "bolt://neo4j:7687"
+      SPRING_NEO4J_USERNAME: neo4j
+      SPRING_NEO4J_PASSWORD: password
+    #    Vasilije: slusa na portu 9050
+    volumes:
+      - ./data:/data
+
+
+  gateway-api:
+    build:
+      context: ./GatewayService
+      dockerfile: Dockerfile
+    image: gateway-api:latest
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+    depends_on:
+      - eureka-server
+      #      - columnar-key-value-service
+      - graph-service
+#      - relational-service
+    ports:
+      - "9003:9000"
+
+
+#  columnar-key-value-service:
+#    build:
+#      context: ./ColumnarDatabaseService
+#      dockerfile: Dockerfile
+#    image: columnar-key-value-service:latest
+#    depends_on:
+#      - cassandradb
+#      - eureka-server
+#    restart: always
+#    environment:
+#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+#      SPRING_DATA_CASSANDRA_CONTACT_POINTS: cassandradb
+#      SPRING_DATA_CASSANDRA_PORT: 9042
+#    ports:
+#      - "9050:9050"
+
+#  cassandradb:
+#    image: cassandra:latest
+#    ports:
+#      - "9042:9042"
+#    volumes:
+#      - data:/var/lib/cassandra
+#    healthcheck:
+#      test: ["CMD-SHELL", "[ $$(nodetool statusgossip) = running ]"]
+#      interval: 30s
+#      timeout: 10s
+
+
+volumes:
+  data:
+  grafana_storage: { }
