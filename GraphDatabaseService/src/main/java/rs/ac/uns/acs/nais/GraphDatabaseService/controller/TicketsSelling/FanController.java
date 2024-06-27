@@ -67,16 +67,7 @@ public class FanController {
         }
     }
 
-    // TODO: Ne radi, verovatno problem u datumu nekako ne moze da ga prepozna, jer je sve isto kao kod Pantica kao kad vraca npr. listu playlista, model je identican, logika povratne vrednosti upita je ista.
-    @GetMapping("/creates-order/{username}")
-    public ResponseEntity<String> findCreatesOrderRelationships(@PathVariable String username) {
-        List<Order> orders = fanService.findCreatesOrderRelationships(username);
-        if (orders != null) {
-            return ResponseEntity.ok("Fan with username '" + username + "' has the following orders: " + orders.toString());
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fan with username '" + username + "' doesn't have orders.");
-        }
-    }
+
 
     @GetMapping("/findTwoFansWithLowestPointsAndAtLeastOneOrderThisYear")
     public ResponseEntity<String> findTwoFansWithLowestPointsAndAtLeastOneOrderThisYear() {
@@ -103,6 +94,47 @@ public class FanController {
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Something went wrong!");
         }
+    }
+
+    @DeleteMapping("/creates-order/{username}/{orderID}")
+    public ResponseEntity<String> deleteCreatesOrder(@PathVariable String username, @PathVariable String orderID){
+        if (fanService.deleteCreatesOrder(username, orderID)) {
+            return ResponseEntity.ok("Successfully deleted.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Something went wrong!");
+        }
+    }
+
+    @PutMapping("/creates-order/{username}/{orderID}/{updatingUsername}/{updatingOrderID}")
+    public ResponseEntity<String> updateCreatesOrder(@PathVariable String username, @PathVariable String orderID, @PathVariable String updatingUsername, @PathVariable String updatingOrderID){
+        fanService.deleteCreatesOrder(username, orderID);
+        fanService.createCreatesOrderRelationship(updatingUsername, updatingOrderID);
+        return ResponseEntity.ok("Successfully updated relationship.");
+    }
+
+    @PostMapping(value = "/member-of/{level}/{username}/{pointsNumber}")
+    public ResponseEntity<String> createMemberOfRelationship(@PathVariable String level, @PathVariable String username, @PathVariable Integer pointsNumber) {
+        if (fanService.createMemberOfRelationship(level, username, pointsNumber)) {
+            return ResponseEntity.ok("Successfully created.");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Something went wrong!");
+        }
+    }
+
+    @DeleteMapping("/member-of/{username}/{level}")
+    public ResponseEntity<String> deleteMemberOfRelationship(@PathVariable String username, @PathVariable String level){
+        if (fanService.deleteMemberOfRelationship(username, level)) {
+            return ResponseEntity.ok("Successfully deleted.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Something went wrong!");
+        }
+    }
+
+    @PutMapping("/member-of/{username}/{level}/{updatingUsername}/{updatingLevel}/{newPointsNumber}")
+    public ResponseEntity<String> updateMemberOf(@PathVariable String username, @PathVariable String level, @PathVariable String updatingUsername, @PathVariable String updatingLevel, @PathVariable Integer newPointsNumber){
+        fanService.deleteMemberOfRelationship(username, level);
+        fanService.createMemberOfRelationship(updatingLevel, updatingUsername, newPointsNumber);
+        return ResponseEntity.ok("Successfully updated relationship.");
     }
 
 }

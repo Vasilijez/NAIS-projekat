@@ -1,5 +1,6 @@
 package rs.ac.uns.acs.nais.GraphDatabaseService.service.TicketsSelling;
 
+import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.stereotype.Service;
 import rs.ac.uns.acs.nais.GraphDatabaseService.dto.TicketsSelling.*;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.Fan;
@@ -39,9 +40,7 @@ public class FanService {
         return fanRepository.createCreatesOrderRelationship(username, orderID);
     }
 
-    public List<Order> findCreatesOrderRelationships(String username) {
-        return fanRepository.findCreatesOrderRelationships(username);
-    }
+
 
     public List<TwoBottomFansDTO> findTwoFansWithLowestPointsAndAtLeastOneOrderThisYear() {
         return fanRepository.findTwoFansWithLowestPointsAndAtLeastOneOrderThisYear();
@@ -55,5 +54,19 @@ public class FanService {
         return fanRepository.updateFanLoyaltyProgramPoints();
     }
 
+
+    public boolean deleteCreatesOrder(String username, String orderID) {
+        return fanRepository.deleteCreatesOrder(username, orderID);
+    }
+
+    // update creates order ovde ide
+
+    public boolean createMemberOfRelationship(String level, String username, Integer pointsNumber) {
+        return fanRepository.createMemberOfRelationship(level, username, pointsNumber);
+    }
+
+    public boolean deleteMemberOfRelationship(String username, String level) {
+        return fanRepository.deleteMemberOfRelationship(username, level);
+    }
 
 }

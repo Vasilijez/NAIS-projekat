@@ -4,6 +4,9 @@ import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.stereotype.Repository;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.LoyaltyProgram;
+import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.Order;
+
+import java.util.List;
 
 @Repository
 public interface LoyaltyProgramRepository extends Neo4jRepository<LoyaltyProgram, Long> {
@@ -36,24 +39,8 @@ public interface LoyaltyProgramRepository extends Neo4jRepository<LoyaltyProgram
             "RETURN count(n) > 0 ")
     boolean deleteLoyaltyProgram(String level);
 
-
-//    @Query("MATCH (c:Customer {idOriginal: $customerId}) " +
-//            "OPTIONAL MATCH (c)-[r:PURCHASED]->(p:Product {idOriginal: $productId}) " +
-//            "WITH c, p, COALESCE(r, 0) AS rel " +
-//            "MERGE (c)-[purchase: PURCHASED]->(p) " +
-//            "ON CREATE SET purchase.numberOfPurchasedItems = 1 " +
-//            "ON MATCH SET purchase.numberOfPurchasedItems = rel.numberOfPurchasedItems + 1")
-//    void purchaseProduct(Long customerId, String productId);
-//
-//
-//    @Query("MATCH (c:Customer {idOriginal: $customerId})-[r:PURCHASED]->(p:Product {idOriginal: $productId}) " +
-//            "RETURN count(r) > 0")
-//    boolean hasPurchasedProduct(Long customerId, String productId);
-//
-//    @Query("MATCH (c:Customer {idOriginal: $customerId}) " +
-//            "MATCH (p:Product {idOriginal: $productId}) " +
-//            "CREATE (c)-[purchase:PURCHASED]->(p) " +
-//            "SET purchase.numberOfPurchasedItems = 1")
-//    void createPurchase(Long customerId, String productId);
+    @Query("MATCH (:Fan {username: $username})-[r:MEMBER_OF]->(lp:LoyaltyProgram) " +
+            "RETURN lp ")
+    List<LoyaltyProgram> findMemberOfRelationship(String username);
 
 }

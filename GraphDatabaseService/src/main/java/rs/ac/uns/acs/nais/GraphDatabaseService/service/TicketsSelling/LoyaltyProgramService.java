@@ -6,8 +6,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.LoyaltyProgram;
+import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.Order;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.TransactionStatus;
 import rs.ac.uns.acs.nais.GraphDatabaseService.repository.TicketsSelling.LoyaltyProgramRepository;
+
+import java.util.List;
 
 
 @Service
@@ -64,5 +67,8 @@ public class LoyaltyProgramService {
         return loyaltyProgramRepository.deleteLoyaltyProgram(level);
     }
 
+    public List<LoyaltyProgram> findMemberOfRelationship(String username) {
+        return loyaltyProgramRepository.findMemberOfRelationship(username);
+    }
 
 }

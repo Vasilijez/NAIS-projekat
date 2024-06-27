@@ -39,4 +39,10 @@ public interface OrderRepository extends Neo4jRepository<Order, Long> {
             "LIMIT 3 ")
     List<Order> findTop3ShippedAndCashPaidOrdersMadeByStudents();
 
+
+    @Query("MATCH (:Fan {username: $username})-[r:CREATES_ORDER]->(o:Order) " +
+            "RETURN o ")
+    List<Order> findCreatesOrderRelationships(String username);
+
+
 }

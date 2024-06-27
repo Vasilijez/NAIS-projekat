@@ -42,4 +42,9 @@ public class OrderService {
     public List<Order> findTop3ShippedAndCashPaidOrdersMadeByStudents() {
         return orderRepository.findTop3ShippedAndCashPaidOrdersMadeByStudents();
     }
+
+    public List<Order> findCreatesOrderRelationships(String username) {
+        return orderRepository.findCreatesOrderRelationships(username);
+    }
+
 }

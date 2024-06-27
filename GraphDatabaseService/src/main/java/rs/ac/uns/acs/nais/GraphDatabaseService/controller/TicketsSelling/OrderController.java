@@ -67,5 +67,15 @@ public class OrderController {
         }
     }
 
+    @GetMapping("/creates-order/{username}")
+    public ResponseEntity<String> findCreatesOrderRelationships(@PathVariable String username) {
+        List<Order> orders = orderService.findCreatesOrderRelationships(username);
+        if (orders != null) {
+            return ResponseEntity.ok("Fan with username '" + username + "' has the following orders: " + orders.toString());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fan with username '" + username + "' doesn't have orders.");
+        }
+    }
+
 }
 

@@ -37,10 +37,6 @@ public interface FanRepository extends Neo4jRepository<Fan, Long> {
             "RETURN count(r) > 0 ")
     boolean createCreatesOrderRelationship(String username, String orderID);
 
-    @Query("MATCH (:Fan {username: $username})-[r:CREATES_ORDER]->(o:Order) " +
-            "RETURN o ")
-    List<Order> findCreatesOrderRelationships(String username);
-
     @Query("MATCH (f:Fan)-[r:MEMBER_OF]->(:LoyaltyProgram), (f)-[:CREATES_ORDER]->(o:Order) " +
             "WHERE o.creationDate >= date(\"2024-01-01\") " +
             "RETURN DISTINCT f as fan, r.pointsNumber as pointsNumber " +
@@ -61,4 +57,21 @@ public interface FanRepository extends Neo4jRepository<Fan, Long> {
     List <FanLoyaltyProgramPointsUpdatingDTO> updateFanLoyaltyProgramPoints();
 
 
+    @Query("MATCH (f:Fan {username: $username})-[r:CREATES_ORDER]->(o:Order {orderID: $orderID}) " +
+            "DELETE r " +
+            "RETURN count(r) > 0 ")
+    boolean deleteCreatesOrder(String username, String orderID);
+
+
+    @Query("MATCH (lp:LoyaltyProgram {level: $level}), (f:Fan {username: $username}) " +
+            "CREATE (f)-[r:MEMBER_OF {pointsNumber: $pointsNumber}]->(lp) " +
+            "RETURN count(r) > 0 ")
+    boolean createMemberOfRelationship(String level, String username, Integer pointsNumber);
+
+    @Query("MATCH (f:Fan {username: $username})-[r:MEMBER_OF]->(lp:LoyaltyProgram {level: $level}) " +
+            "DELETE r " +
+            "RETURN count(r) > 0 ")
+    boolean deleteMemberOfRelationship(String username, String level);
+
 }
+

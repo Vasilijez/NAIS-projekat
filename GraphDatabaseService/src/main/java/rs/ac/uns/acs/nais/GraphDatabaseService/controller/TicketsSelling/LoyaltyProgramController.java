@@ -5,10 +5,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.LoyaltyProgram;
+import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.Order;
 import rs.ac.uns.acs.nais.GraphDatabaseService.model.TicketsSelling.TransactionStatus;
 import rs.ac.uns.acs.nais.GraphDatabaseService.service.TicketsSelling.LoyaltyProgramService;
 
 import javax.swing.text.StyledEditorKit;
+import java.util.List;
 
 @RestController
 @RequestMapping("/loyalty-program")
@@ -68,51 +70,15 @@ public class LoyaltyProgramController {
         }
     }
 
-
-//    @PutMapping(value = "/{level}", consumes = "application/json")
-//    public ResponseEntity<LoyaltyProgram> getLoyaltyProgramByLevel(@PathVariable String level, @RequestBody String updatingLevel, @RequestBody Double discountRate) {
-//        LoyaltyProgram updatedNode = loyaltyProgramService.updateLoyaltyProgram(level, updatingLevel, discountRate);
-//        return updatedNode != null ? ResponseEntity.ok(updatedNode) : ResponseEntity.notFound().build();
-//    }
-
-
-//    @PostMapping
-//    public ResponseEntity<Customer> addNewCustomer(@RequestBody Customer customer){
-//        Customer createdCustomer = customerService.addNewCustomer(customer);
-//        return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
-//    }
-//
-//    @DeleteMapping
-//    public ResponseEntity<Customer> deleteCustomer(@RequestParam String customerEmail){
-//        if(customerService.deleteCustomer(customerEmail)){
-//            return new ResponseEntity<>(HttpStatus.OK);
-//        }
-//
-//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//    }
-//
-//    @PutMapping
-//    public ResponseEntity<Customer> updateCustomer(@RequestParam("customerEmailOld") String customerEmailOld, @RequestParam("customerEmailNew") String customerEmailNew ){
-//        if(customerService.updateCustomer(customerEmailOld, customerEmailNew)){
-//            return new ResponseEntity<>(HttpStatus.OK);
-//        }
-//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//    }
-//
-//    @PostMapping("addReview")
-//    public ResponseEntity addNewReview(@RequestBody ReviewDTO reviewDTO){
-//        if(customerService.addReview(reviewDTO) != null){
-//            return new ResponseEntity<>(HttpStatus.CREATED);
-//        }
-//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//    }
-//
-//    @PostMapping("addPurchase")
-//    public ResponseEntity<Customer> addNewPurchase(@RequestBody OrderDTO orderDTO){
-//        customerService.addPurchase(orderDTO);
-//        return new ResponseEntity<>(HttpStatus.CREATED);
-//    }
-
+    @GetMapping("/member-of/{username}")
+    public ResponseEntity<String> findMemberOfRelationship(@PathVariable String username) {
+        List<LoyaltyProgram> loyaltyPrograms = loyaltyProgramService.findMemberOfRelationship(username);
+        if (loyaltyPrograms != null) {
+            return ResponseEntity.ok("Fan with username '" + username + "' is enrolled in the following loyalty programs: " + loyaltyPrograms.toString());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("He isn't enrolled in any loyalty program.");
+        }
+    }
 
 
 }
