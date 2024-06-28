@@ -1,0 +1,1371 @@
+{
+	"info": {
+		"_postman_id": "dc261721-2be4-4a0f-bb03-bb501369bbf3",
+		"name": "TicketsSelling",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20441122",
+		"_collection_link": "https://universal-space-709530.postman.co/workspace/NAIS~38fac27d-fdf2-420b-8819-57937c0ad9cf/collection/20441122-dc261721-2be4-4a0f-bb03-bb501369bbf3?action=share&source=collection_link&creator=20441122"
+	},
+	"item": [
+		{
+			"name": "Loyalty program",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/loyalty-program/Level_99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"loyalty-program",
+								"Level_99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/loyalty-program/Level_2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"loyalty-program",
+								"Level_2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"level\": \"Level_55\",\r\n    \"discountRate\": 0.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/loyalty-program/Level_92",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"loyalty-program",
+								"Level_92"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"level\": \"Level_92\",\r\n    \"discountRate\": 0.57\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/loyalty-program",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"loyalty-program"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/order/O66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"order",
+								"O66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/order/O66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"order",
+								"O66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderID\": \"O66\",\r\n    \"totalPrice\": \"25000\",\r\n    \"creationDate\": \"2015-05-09\",\r\n    \"deliveryType\": \"Courir\",\r\n    \"status\": \"Reserved\",\r\n    \"paymentMethod\": \"PaymentSlip\",\r\n    \"username\": \"Vasilijez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/order/O66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"order",
+								"O66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderID\": \"O66\",\r\n    \"totalPrice\": \"150\",\r\n    \"creationDate\": \"2015-05-09\",\r\n    \"deliveryType\": \"Email\",\r\n    \"status\": \"Reserved\",\r\n    \"paymentMethod\": \"PaymentSlip\",\r\n    \"username\": \"Petarm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fan",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/Petarm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"Petarm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/Petarm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"Petarm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Petarm\",\r\n    \"fanType\": \"Student\",\r\n    \"favouritePlayer\": \"Ronaldoo\",\r\n    \"dateOfBirth\": \"2002-05-05\",\r\n    \"gender\": \"Male\",\r\n    \"level\": \"Level_3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/Petarm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"Petarm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Petarm\",\r\n    \"fanType\": \"Student\",\r\n    \"favouritePlayer\": \"Ronaldo\",\r\n    \"dateOfBirth\": \"2001-05-05\",\r\n    \"gender\": \"Male\",\r\n    \"level\": \"Level_3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/ticket/T100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"ticket",
+								"T100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/ticket/T100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"ticket",
+								"T100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ticketID\": \"T100\",\r\n    \"price\": 1500,\r\n    \"orderID\": \"O66\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/ticket/T100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"ticket",
+								"T100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ticketID\": \"T100\",\r\n    \"price\": 100,\r\n    \"orderID\": \"O66\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/ticket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SeasonTicket",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/season-ticket/T100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"season-ticket",
+								"T100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/season-ticket/T100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"season-ticket",
+								"T100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ticketID\": \"T100\",\r\n    \"price\": 100,\r\n    \"startTime\": \"2024-01-01\", \r\n    \"endTime\": \"2024-01-01\",\r\n    \"orderID\": \"O66\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/season-ticket/T100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"season-ticket",
+								"T100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ticketID\": \"T100\",\r\n    \"price\": 100,\r\n    \"startTime\": \"2023-01-01\", \r\n    \"endTime\": \"2024-01-01\",\r\n    \"orderID\": \"O66\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/season-ticket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"season-ticket"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FootballMatch",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/football-match/FM100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"football-match",
+								"FM100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/football-match/FM100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"football-match",
+								"FM100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"footballMatchID\": \"FM100\",\r\n    \"startTime\": \"2024-05-04T20:00:00\",\r\n    \"opponentName\": \"FK Dubocica\",\r\n    \"result\": \"1-1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/football-match/FM100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"football-match",
+								"FM100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"footballMatchID\": \"FM100\",\r\n    \"startTime\": \"2024-06-04T21:00\",\r\n    \"opponentName\": \"FK Dubocica\",\r\n    \"result\": \"1-1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/football-match",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"football-match"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seat",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat/SN30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat",
+								"SN30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat/SN30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat",
+								"SN30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seatNumber\": \"SN30\",\r\n    \"sector\": \"22\",\r\n    \"tribune\": \"East\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat/SN30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat",
+								"SN30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seatNumber\": \"SN30\",\r\n    \"sector\": \"2\",\r\n    \"tribune\": \"East\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SeatReservation",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat-reservation/FM100/SN3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat-reservation",
+								"FM100",
+								"SN3000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat-reservation/FM100/SN30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat-reservation",
+								"FM100",
+								"SN30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"footballMatchID\": \"FM100\",\r\n    \"seatNumber\": \"SN3000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat-reservation/FM100/SN30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat-reservation",
+								"FM100",
+								"SN30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"footballMatchID\": \"FM100\",\r\n    \"seatNumber\": \"SN30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat-reservation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat-reservation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Creates Order",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/creates-order/Vasilijez/O66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"creates-order",
+								"Vasilijez",
+								"O66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/order/creates-order/Vasilijez",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"order",
+								"creates-order",
+								"Vasilijez"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Petarm\",\r\n    \"fanType\": \"Student\",\r\n    \"favouritePlayer\": \"Ronaldo\",\r\n    \"dateOfBirth\": \"2001-05-05\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/creates-order/Peraa/O66/Vasilijez/O66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"creates-order",
+								"Peraa",
+								"O66",
+								"Vasilijez",
+								"O66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/creates-order/Peraa/O66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"creates-order",
+								"Peraa",
+								"O66"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Member of",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/member-of/Vasilijez/Level_3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"member-of",
+								"Vasilijez",
+								"Level_3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/loyalty-program/member-of/Vasilijez",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"loyalty-program",
+								"member-of",
+								"Vasilijez"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Petarm\",\r\n    \"fanType\": \"Student\",\r\n    \"favouritePlayer\": \"Ronaldo\",\r\n    \"dateOfBirth\": \"2001-05-05\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/member-of/Vasilijez/Level_2/Peraa/Level_2/51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"member-of",
+								"Vasilijez",
+								"Level_2",
+								"Peraa",
+								"Level_2",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/member-of/Level_3/Petarm/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"member-of",
+								"Level_3",
+								"Petarm",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upiti",
+			"item": [
+				{
+					"name": "Prost br. 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/order/findTop3ShippedAndCashPaidOrdersMadeByStudents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"order",
+								"findTop3ShippedAndCashPaidOrdersMadeByStudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prost br. 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/findTwoFansWithLowestPointsAndAtLeastOneOrderThisYear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"findTwoFansWithLowestPointsAndAtLeastOneOrderThisYear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Slozeni br. 1 - preporuka",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat/recommendStandardTicketSeat/Vasilijez",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat",
+								"recommendStandardTicketSeat",
+								"Vasilijez"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Slozeni br. 2 - preporuka",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seasonTicketStartTime\": \"2024-04-04T21:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/seat/recommendSeasonTicketSeat/Peraa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"seat",
+								"recommendSeasonTicketSeat",
+								"Peraa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Slozeni br. 3 - preporuka",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/football-match/recommendPopularFootballMatch/Peraa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"football-match",
+								"recommendPopularFootballMatch",
+								"Peraa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Slozeni br. 4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/football-match/getTicketsStatsFromFiveLatestFootballMatches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"football-match",
+								"getTicketsStatsFromFiveLatestFootballMatches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Slozeni br. 5",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/fan/updateFanLoyaltyProgramPoints",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"fan",
+								"updateFanLoyaltyProgramPoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Izvestaj",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/football-match/export-pdf?fanUsername=Peraa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"football-match",
+								"export-pdf"
+							],
+							"query": [
+								{
+									"key": "fanUsername",
+									"value": "Peraa"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SAGA",
+			"item": [
+				{
+					"name": "Create from relational DB",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"level\": \"Level_5\",\r\n    \"discount_rate\": 0.57\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/relational-database-service/loyalty-program",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"relational-database-service",
+								"loyalty-program"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create from graph DB",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"level\": \"Level_99\",\r\n    \"discountRate\": 0.6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/loyalty-program/saga",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"loyalty-program",
+								"saga"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"level\": \"Level_92\",\r\n    \"discountRate\": 0.57\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/graph-database-service/loyalty-program/saga/checkStatus/wyUxD2AMXR",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"graph-database-service",
+								"loyalty-program",
+								"saga",
+								"checkStatus",
+								"wyUxD2AMXR"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
